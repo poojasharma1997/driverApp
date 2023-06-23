@@ -1,0 +1,64 @@
+@include media-breakpoint(basic) {
+  .footer {
+    padding: 15px 18px;
+    border-color: lighten($theme1, 31) !important;
+    background-color: lighten($theme1, 45.8);
+    & .footerMenu {
+      & .menuList {
+        & .item {
+          & .links {
+            &.active, &:hover {
+              & .iconOuter{
+                & .normalImg {
+                  opacity: 0;
+                }
+                & .activeImg{
+                  opacity: 1 !important;
+                }
+              }
+            & .linkTxt {
+              color: lighten($black, 7.5) !important;
+            }
+            }
+            & .iconOuter{
+              width: 24px;
+              height: 24px;
+              & .activeImg {
+                margin-top: 1.2px !important;
+              }
+              & img {
+                transition: ease-in-out .3s;
+              }
+            }
+            & .linkTxt {
+              font-family: 'Outfit';
+              font-style: normal;
+              font-weight: 500;
+              font-size: 12px;
+              line-height: 15px;
+              color: lighten($black, 7.5);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
+@include media-breakpoint-up(sm) {
+  
+}
+@include media-breakpoint-up(md) {
+  
+}
+@include media-breakpoint-up(lg) {
+  
+}
+@include media-breakpoint-up(xl) {
+  
+}
+@include media-breakpoint-up(xxl) {
+  
+}

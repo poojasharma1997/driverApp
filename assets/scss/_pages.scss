@@ -1,0 +1,123 @@
+// ? @@@@@@@@@@@@@@@@@@@@@@[  signin start  ]@@@@@@@@@@@@@@@@@@@@@@
+@include media-breakpoint(basic) {
+    .TripFile {
+        & .tripLabel {
+            &.dashBorder {
+                border: 1px dashed lighten($theme1, 30);
+            }
+            &.solidBorder {
+                border: 1px solid lighten($theme1, 30);
+            }
+            background-color: lighten($color: $theme1, $amount: 45);
+            height: 86px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 2px;
+            & .fileUploadImg {
+                width: 24px;
+                height: 24px;
+                padding-bottom:5px;
+                & img {
+                    aspect-ratio: 10/10;
+                    object-fit: contain;
+                    object-position: center;
+                }
+            }
+            & .fileUploadText {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 18px;
+                color: lighten($color: $black, $amount: 20);
+                font-family: outfit;
+
+            }
+        }
+    }
+    .CalendarType {
+        padding-top: 33px;
+        & .calendar {
+            & .calendarDetail {
+                padding: 12px 14px 12px 14px;
+                background-color: lighten($color: $theme1, $amount: 45);
+                border: 1px solid lighten($theme1, 30);
+                width: 100%;
+                display: flex;
+                border-radius: 2px;
+                & .calendarImg {
+                    width: 22px;
+                    margin-right: 17px;
+                    height: 22px;
+                    & img {
+                        aspect-ratio: 10/10;
+                        object-fit: contain;
+                        object-position: center;
+                    }
+                }
+                & .calendarTimeText {
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 15px;
+                    color: lighten($color: $black, $amount: 7);
+                    font-family: outfit;
+                }
+            }
+        }
+    }
+}
+
+
+// No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
+@include media-breakpoint-up(sm) {
+    
+}
+@include media-breakpoint-up(md) {
+    
+}
+@include media-breakpoint-up(lg) {
+    
+}
+@include media-breakpoint-up(xl) {
+    
+}
+@include media-breakpoint-up(xxl) {
+    
+}
+
+[data-bs-theme=dark] {
+    & [data-page-name=signin] {
+        @include dark-media-breakpoint(basic) {
+            
+        }
+
+        // No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
+        @include dark-media-breakpoint-up(sm) {
+        }
+        @include dark-media-breakpoint-up(md) {
+        }
+        @include dark-media-breakpoint-up(lg) {
+        }
+        @include dark-media-breakpoint-up(xl) {
+        }
+        @include dark-media-breakpoint-up(xxl) {
+        }
+    
+    
+        @include dark-media-breakpoint-down(xxl) {
+        }
+        @include dark-media-breakpoint-down(xl) {
+        }
+        @include dark-media-breakpoint-down(lg) {
+        }
+        @include dark-media-breakpoint-down(md) {
+        }
+        @include dark-media-breakpoint-down(sm) {
+        }
+    }
+}
+
+// ! @@@@@@@@@@@@@@@@@@@@@@[  signin start  ]@@@@@@@@@@@@@@@@@@@@@@
+

@@ -1,0 +1,6807 @@
+:root {
+  --topbar-height: 70px;
+  --startbar-width: 300px;
+  --endbar-width: 70px;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("../fonts/Outfit-Black.woff2") format("woff2"), url("../fonts/Outfit-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Outfit";
+  src: url("../fonts/Outfit-Bold.woff2") format("woff2"), url("../fonts/Outfit-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Outfit";
+  src: url("../fonts/Outfit-ExtraBold.woff2") format("woff2"), url("../fonts/Outfit-ExtraBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Outfit";
+  src: url("../fonts/Outfit-Regular.woff2") format("woff2"), url("../fonts/Outfit-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Outfit";
+  src: url("../fonts/Outfit-ExtraLight.woff2") format("woff2"), url("../fonts/Outfit-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Outfit";
+  src: url("../fonts/Outfit-Medium.woff2") format("woff2"), url("../fonts/Outfit-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Outfit";
+  src: url("../fonts/") format("woff2"), url("../fonts/Outfit-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Outfit";
+  src: url("../fonts/Outfit-Thin.woff2") format("woff2"), url("../fonts/Outfit-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Outfit";
+  src: url("../fonts/Outfit-Light.woff2") format("woff2"), url("../fonts/Outfit-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Abhaya Libre";
+  src: url("../fonts/AbhayaLibre-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Abhaya Libre";
+  src: url("../fonts/AbhayaLibre-ExtraBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Abhaya Libre";
+  src: url("../fonts/AbhayaLibre-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Abhaya Libre";
+  src: url("../fonts/AbhayaLibre-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Abhaya Libre";
+  src: url("../fonts/AbhayaLibre-SemiBold.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "bruno ace";
+  src: url("../fonts/BrunoAce-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "bruno ace";
+  src: url("../fonts/BrunoAce-Regular.woff2") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+* > *::-webkit-scrollbar {
+  width: 0em;
+  height: 0.3em;
+}
+* > *::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 50em;
+}
+* > *::-webkit-scrollbar-thumb {
+  background: rgba(251, 202, 12, 0);
+  border-radius: 50em;
+}
+* > *::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 202, 12, 0.6);
+}
+*:hover > *::-webkit-scrollbar-track {
+  width: 0.3em;
+  height: 0.3em;
+}
+*:hover > *::-webkit-scrollbar-thumb {
+  background: rgba(251, 202, 12, 0.1);
+  border-radius: 50em;
+}
+*:hover > *::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 202, 12, 0.8);
+}
+
+[href*=javascript][target=_blank] {
+  pointer-events: none;
+}
+
+a.active[href],
+a.accordion-button:not(.collapsed) {
+  pointer-events: none;
+}
+
+body {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  outline: 0 !important;
+  display: block !important;
+  user-select: none !important;
+}
+body input, body textarea, body select {
+  user-select: auto;
+}
+body main {
+  width: 100vw !important;
+  max-width: none !important;
+  height: 100% !important;
+  margin: 0 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  padding: 0px !important;
+}
+body main > .mainInner {
+  height: 100% !important;
+  border: 0 !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  outline: 0 !important;
+  overflow: hidden !important;
+  margin: 0px !important;
+  flex-wrap: nowrap !important;
+}
+body main > .mainInner [data-scrollbar] {
+  height: 100%;
+  overflow: hidden auto;
+}
+body .overflow-hidden-auto {
+  overflow: hidden auto !important;
+}
+body .overflow-auto-hidden {
+  overflow: auto hidden !important;
+}
+
+@media (min-width: 768px) {
+  * > * {
+    scrollbar-width: thin !important;
+    scrollbar-color: #23b9e3 !important;
+  }
+  * > *::-webkit-scrollbar {
+    width: 0.3em;
+    height: 0.3em;
+  }
+  * > *::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 50em;
+  }
+  * > *::-webkit-scrollbar-thumb {
+    background: rgba(173, 181, 189, 0);
+    border-radius: 50em;
+  }
+  * > *::-webkit-scrollbar-thumb:hover {
+    background: rgba(206, 212, 218, 0.6);
+  }
+  * > * > *:hover::-webkit-scrollbar {
+    width: 0.3em;
+    height: 0.3em;
+  }
+  * > * > *:hover::-webkit-scrollbar-thumb {
+    background: rgba(173, 181, 189, 0.1);
+    border-radius: 50em;
+  }
+  * > * > *:hover::-webkit-scrollbar-thumb:hover {
+    background: rgba(206, 212, 218, 0.8);
+  }
+}
+.header {
+  padding: 19px 18px;
+}
+.header .profileOuter {
+  width: 60px;
+  height: 60px;
+}
+.header .profileOuter img {
+  object-fit: cover;
+  object-position: center;
+}
+.header .userDetail .title {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+.header .userDetail .name {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+}
+.header .userDetail .progress {
+  width: 130px;
+  height: 4px;
+}
+.header .userDetail .progress .value {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  top: -5px;
+  right: -36px;
+}
+.header .otherMenu .headerBtn.notification .totlaNtification {
+  width: 12px;
+  height: 12px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 8px;
+  line-height: 10px;
+  left: -4px;
+}
+
+.headerNew {
+  padding: 16px 18px;
+}
+.headerNew .headerNewImg {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.headerNew .headerNewImg img {
+  aspect-ratio: 10/10;
+  object-fit: contain;
+}
+.headerNew .headerHeading {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #202020;
+  text-align: center;
+  font-family: outfit;
+}
+
+.footer {
+  padding: 15px 18px;
+  border-color: #feeca8 !important;
+  background-color: #fffcf2;
+}
+.footer .footerMenu .menuList .item .links.active .iconOuter .normalImg, .footer .footerMenu .menuList .item .links:hover .iconOuter .normalImg {
+  opacity: 0;
+}
+.footer .footerMenu .menuList .item .links.active .iconOuter .activeImg, .footer .footerMenu .menuList .item .links:hover .iconOuter .activeImg {
+  opacity: 1 !important;
+}
+.footer .footerMenu .menuList .item .links.active .linkTxt, .footer .footerMenu .menuList .item .links:hover .linkTxt {
+  color: #333333 !important;
+}
+.footer .footerMenu .menuList .item .links .iconOuter {
+  width: 24px;
+  height: 24px;
+}
+.footer .footerMenu .menuList .item .links .iconOuter .activeImg {
+  margin-top: 1.2px !important;
+}
+.footer .footerMenu .menuList .item .links .iconOuter img {
+  transition: ease-in-out 0.3s;
+}
+.footer .footerMenu .menuList .item .links .linkTxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #333333;
+}
+
+.TripFile .tripLabel {
+  background-color: #fffbee;
+  height: 86px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+}
+.TripFile .tripLabel.dashBorder {
+  border: 1px dashed #fdeba3;
+}
+.TripFile .tripLabel.solidBorder {
+  border: 1px solid #fdeba3;
+}
+.TripFile .tripLabel .fileUploadImg {
+  width: 24px;
+  height: 24px;
+  padding-bottom: 5px;
+}
+.TripFile .tripLabel .fileUploadImg img {
+  aspect-ratio: 10/10;
+  object-fit: contain;
+  object-position: center;
+}
+.TripFile .tripLabel .fileUploadText {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #535353;
+  font-family: outfit;
+}
+
+.CalendarType {
+  padding-top: 33px;
+}
+.CalendarType .calendar .calendarDetail {
+  padding: 12px 14px 12px 14px;
+  background-color: #fffbee;
+  border: 1px solid #fdeba3;
+  width: 100%;
+  display: flex;
+  border-radius: 2px;
+}
+.CalendarType .calendar .calendarDetail .calendarImg {
+  width: 22px;
+  margin-right: 17px;
+  height: 22px;
+}
+.CalendarType .calendar .calendarDetail .calendarImg img {
+  aspect-ratio: 10/10;
+  object-fit: contain;
+  object-position: center;
+}
+.CalendarType .calendar .calendarDetail .calendarTimeText {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #323232;
+  font-family: outfit;
+}
+
+.fullBg {
+  height: 100vh !important;
+  background: linear-gradient(to top, #322802 0%, #322802 50%, #FBCA0C 50%, #FBCA0C 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[data-page-name=onboarding] .pagePadding {
+  padding: 0px 13px;
+}
+[data-page-name=onboarding] .pagePadding .onboarding .onboardingImg {
+  width: 335px;
+  height: 243px;
+  margin: auto;
+}
+[data-page-name=onboarding] .pagePadding .onboarding .onboardingImg img {
+  aspect-ratio: 10/10;
+  object-fit: contain;
+}
+[data-page-name=onboarding] .pagePadding .onboarding .onboardingTextPara {
+  padding-top: 46px;
+  padding-bottom: 59px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #333333;
+}
+[data-page-name=onboarding] .pagePadding .onboardingNav .onboardingNavList {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+[data-page-name=onboarding] .pagePadding .onboardingNav .onboardingNavList .onboardingListItem {
+  list-style: none;
+  margin-right: 13px;
+  width: 41px;
+  height: 5px;
+  left: 106px;
+  top: 526px;
+  background: #ced4da;
+  border-radius: 4px;
+}
+[data-page-name=onboarding] .pagePadding .onboardingNav .onboardingNavList .onboardingListItem.active {
+  background: #FBCA0C;
+}
+[data-page-name=onboarding] .pagePadding .onboardingNav .onboardingNavList .onboardingListItem:last-child {
+  margin-right: 0px;
+}
+[data-page-name=otp] .headerArrow {
+  width: 24px;
+  height: 24px;
+}
+[data-page-name=otp] .headerArrow img {
+  aspect-ratio: 10/10;
+  object-fit: cover;
+}
+[data-page-name=otp] .mainContent {
+  padding: 100px 18px 0px 18px;
+}
+[data-page-name=otp] .mainContent .otpHeading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #333333;
+  width: 100%;
+  margin: auto;
+  font-family: outfit;
+}
+[data-page-name=otp] .mainContent .otpInput {
+  padding-top: 22px;
+  padding-bottom: 55px;
+  width: 100%;
+  margin: auto;
+  justify-content: center;
+}
+[data-page-name=otp] .mainContent .otpInput .otpInputBox {
+  padding: 0px 2px;
+}
+[data-page-name=otp] .mainContent .otpInput .otpInputBox input {
+  text-align: center;
+  width: 46px;
+  font-size: 18px;
+}
+[data-page-name=otp] .mainContent .otpInput .timeRemaining {
+  padding-top: 28px;
+}
+[data-page-name=otp] .mainContent .otpInput .timeRemaining .timeDuration {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #222222;
+  font-family: outfit;
+}
+[data-page-name=otp] .mainContent .otpInput .timeRemaining .timeDuration span {
+  color: #FBCA0C;
+}
+[data-page-name=otp] .mainContent .otpInput .timeRemaining .otpTimeSend {
+  font-weight: 500;
+  font-size: 14px;
+  color: #222222;
+  line-height: 18px;
+  font-family: outfit;
+}
+[data-page-name=otp] .mainContent .formBtn {
+  padding-top: 55px;
+}
+[data-page-name=cashBooking] .contentBody .bookingHeader {
+  background-color: #fbce20;
+  padding: 12px 18px;
+}
+[data-page-name=cashBooking] .contentBody .bookingHeader .bookingHeaderItem {
+  padding: 3px 15px 3px 15px;
+  border-right: 2px solid #fcd439;
+}
+[data-page-name=cashBooking] .contentBody .bookingHeader .bookingHeaderItem:last-child {
+  border-right: none;
+}
+[data-page-name=cashBooking] .contentBody .bookingHeader .bookingHeaderItem .bookingHeaderItemImg {
+  margin-right: 10px;
+  width: 26px;
+  height: 26px;
+}
+[data-page-name=cashBooking] .contentBody .bookingHeader .bookingHeaderItem .bookingHeaderItemImg img {
+  aspect-ratio: 10/10;
+  object-fit: contain;
+}
+[data-page-name=cashBooking] .contentBody .bookingHeader .bookingHeaderItem .bookingHeaderItemtext {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+  font-family: outfit;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding {
+  padding: 0px 18px;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .BookingItem {
+  padding-top: 25px;
+  padding-bottom: 38px;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .BookingItem .BookingItemHeading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  padding-bottom: 15px;
+  color: #202020;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .BookingItem .bookingItems {
+  font-family: "Outfit";
+  border: 1px solid #fdeba3;
+  border-radius: 2px;
+  background-color: #fffbee;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  color: #202020;
+  text-transform: capitalize;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .BookingItem .bookingItems.active {
+  background-color: #202020;
+  color: #fff;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsNew {
+  background-color: #e6f7fc;
+  padding: 20px;
+  font-family: "Outfit";
+  border-radius: 2px;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsNew .timeSchedule .timeScheduletext {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsNew .timeSchedule .timescheduleType {
+  font-family: "Outfit";
+  padding-left: 24px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  color: #202020;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsNew .steps {
+  padding-top: 25px;
+  padding-bottom: 32px;
+  border-bottom: 2px dashed #202020;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsNew .steps .stepsborder {
+  position: relative;
+  padding-bottom: 25px;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsNew .steps .stepsborder::after {
+  content: "";
+  position: absolute;
+  border: 1px dashed #202020;
+  height: 100%;
+  left: 18.2px;
+  top: 8px;
+  z-index: 1;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsNew .steps .stepsborder:last-child {
+  padding-bottom: 0px;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsNew .steps .stepsborder:last-child::after {
+  display: none;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsNew .steps .stepsborder .stepRound1 {
+  width: 16px;
+  height: 14px;
+  background-color: #00d315;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsNew .steps .stepsborder .stepRound2 {
+  width: 16px;
+  height: 14px;
+  background-color: #f53434;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsNew .steps .stepsborder .stepText {
+  font-family: outfit;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 15px;
+  color: #222222;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsNew .tripDetails {
+  font-family: outfit;
+  padding-top: 17px;
+  padding-bottom: 22px;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsNew .tripDetails .tripHeading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+  padding-bottom: 6px;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsNew .tripDetails .triptext {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsOngoing {
+  margin-top: 38px;
+  background-color: snow;
+  padding: 20px 10px 20px 20px;
+  border-radius: 2px;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsOngoing .timeSchedule .timeScheduletext {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsOngoing .timeSchedule .timescheduleType {
+  font-family: "Outfit";
+  padding-left: 24px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  color: #202020;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps {
+  padding-top: 25px;
+  padding-bottom: 32px;
+  border-bottom: 2px dashed #202020;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder {
+  position: relative;
+  padding-bottom: 25px;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder::after {
+  content: "";
+  position: absolute;
+  border: 1px dashed #202020;
+  height: 100%;
+  left: 18.2px;
+  top: 8px;
+  z-index: 1;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder:last-child {
+  padding-bottom: 0px;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder:last-child::after {
+  display: none;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder .stepRound1 {
+  width: 16px;
+  height: 14px;
+  background-color: #00d315;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder .stepRound2 {
+  width: 16px;
+  height: 14px;
+  background-color: #f53434;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder .stepText {
+  font-family: outfit;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 15px;
+  color: #222222;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsOngoing .tripDetails {
+  font-family: outfit;
+  padding-top: 17px;
+  padding-bottom: 22px;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsOngoing .tripDetails .tripHeading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+  padding-bottom: 6px;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsOngoing .tripDetails .triptext {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsUpcoming {
+  background-color: #e6f7fc;
+  padding: 20px 10px 20px 20px;
+  margin-bottom: 24px;
+  margin-top: 38px;
+  border-radius: 2px;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsUpcoming .timeSchedule .timeScheduletext {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsUpcoming .timeSchedule .timescheduleType {
+  font-family: "Outfit";
+  padding-left: 24px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  color: #202020;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps {
+  padding-top: 25px;
+  padding-bottom: 32px;
+  border-bottom: 2px dashed #202020;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .stepsborder {
+  position: relative;
+  padding-bottom: 25px;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .stepsborder::after {
+  content: "";
+  position: absolute;
+  border: 1px dashed #202020;
+  height: 100%;
+  left: 18.2px;
+  top: 8px;
+  z-index: 1;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .stepsborder:last-child {
+  padding-bottom: 0px;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .stepsborder:last-child::after {
+  display: none;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .stepsborder .stepRound1 {
+  width: 16px;
+  height: 14px;
+  background-color: #00d315;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .stepsborder .stepRound2 {
+  width: 16px;
+  height: 14px;
+  background-color: #f53434;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .stepsborder .stepText {
+  font-family: outfit;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 15px;
+  color: #222222;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .shareLink {
+  width: 24px;
+  height: 24px;
+  display: flex;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .shareLink img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 10/10;
+  object-fit: contain;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsUpcoming .tripDetails {
+  font-family: outfit;
+  padding-top: 17px;
+  padding-bottom: 22px;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsUpcoming .tripDetails .tripHeading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+  padding-bottom: 6px;
+}
+[data-page-name=cashBooking] .contentBody .spacePadding .bookingItemsdetailsUpcoming .tripDetails .triptext {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=onlineTrip] .contentBody .bookingHeader {
+  background-color: #fbce20;
+  padding: 12px 18px;
+}
+[data-page-name=onlineTrip] .contentBody .bookingHeader .bookingHeaderItem {
+  padding: 3px 15px 3px 15px;
+  border-right: 1px solid #a0a0a0;
+}
+[data-page-name=onlineTrip] .contentBody .bookingHeader .bookingHeaderItem:last-child {
+  border-right: none;
+}
+[data-page-name=onlineTrip] .contentBody .bookingHeader .bookingHeaderItem .bookingHeaderItemImg {
+  margin-right: 10px;
+  width: 26px;
+  height: 26px;
+}
+[data-page-name=onlineTrip] .contentBody .bookingHeader .bookingHeaderItem .bookingHeaderItemImg img {
+  aspect-ratio: 10/10;
+  object-fit: contain;
+}
+[data-page-name=onlineTrip] .contentBody .bookingHeader .bookingHeaderItem .bookingHeaderItemtext {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding {
+  padding: 0px 18px;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .BookingItem {
+  padding-top: 25px;
+  padding-bottom: 38px;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .BookingItem .BookingItemHeading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  padding-bottom: 15px;
+  color: #202020;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .BookingItem .bookingItems {
+  font-family: "Outfit";
+  border: 1px solid #fdeba3;
+  border-radius: 2px;
+  background-color: #fffbee;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  color: #202020;
+  text-transform: capitalize;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .BookingItem .bookingItems.active {
+  background-color: #202020;
+  color: #fff;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsNew {
+  background-color: #e6f7fc;
+  padding: 20px;
+  border-radius: 2px;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsNew .timeSchedule .timeScheduletext {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsNew .timeSchedule .timescheduleType {
+  font-family: "Outfit";
+  padding-left: 24px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  color: #202020;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsNew .steps {
+  padding-top: 25px;
+  padding-bottom: 32px;
+  border-bottom: 2px dashed #202020;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsNew .steps .stepsborder {
+  position: relative;
+  padding-bottom: 25px;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsNew .steps .stepsborder::after {
+  content: "";
+  position: absolute;
+  border: 1px dashed #202020;
+  height: 100%;
+  left: 18.2px;
+  top: 8px;
+  z-index: 1;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsNew .steps .stepsborder:last-child {
+  padding-bottom: 0px;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsNew .steps .stepsborder:last-child::after {
+  display: none;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsNew .steps .stepsborder .stepRound1 {
+  width: 16px;
+  height: 14px;
+  background-color: #00d315;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsNew .steps .stepsborder .stepRound2 {
+  width: 16px;
+  height: 14px;
+  background-color: #f53434;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsNew .steps .stepsborder .stepText {
+  font-family: outfit;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 15px;
+  color: #222222;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsNew .tripDetails {
+  font-family: outfit;
+  padding-top: 17px;
+  padding-bottom: 22px;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsNew .tripDetails .tripHeading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+  padding-bottom: 6px;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsNew .tripDetails .triptext {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing {
+  margin-top: 38px;
+  background-color: snow;
+  padding: 20px 10px 20px 20px;
+  border-radius: 2px;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .timeSchedule .timeScheduletext {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .timeSchedule .timescheduleType {
+  font-family: "Outfit";
+  padding-left: 24px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  color: #202020;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps {
+  padding-top: 25px;
+  padding-bottom: 32px;
+  border-bottom: 2px dashed #202020;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder {
+  position: relative;
+  padding-bottom: 25px;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder::after {
+  content: "";
+  position: absolute;
+  border: 1px dashed #202020;
+  height: 100%;
+  left: 18.2px;
+  top: 8px;
+  z-index: 1;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder:last-child {
+  padding-bottom: 0px;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder:last-child::after {
+  display: none;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder .stepRound1 {
+  width: 16px;
+  height: 14px;
+  background-color: #00d315;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder .stepRound2 {
+  width: 16px;
+  height: 14px;
+  background-color: #f53434;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder .stepText {
+  font-family: outfit;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 15px;
+  color: #222222;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .tripDetails {
+  font-family: outfit;
+  padding-top: 17px;
+  padding-bottom: 22px;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .tripDetails .tripHeading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+  padding-bottom: 6px;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .tripDetails .triptext {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming {
+  background-color: #e6f7fc;
+  padding: 20px 10px 20px 20px;
+  margin-bottom: 24px;
+  margin-top: 38px;
+  border-radius: 2px;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .timeSchedule .timeScheduletext {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .timeSchedule .timescheduleType {
+  font-family: "Outfit";
+  padding-left: 24px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  color: #202020;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps {
+  padding-top: 25px;
+  padding-bottom: 32px;
+  border-bottom: 2px dashed #202020;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .stepsborder {
+  position: relative;
+  padding-bottom: 25px;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .stepsborder::after {
+  content: "";
+  position: absolute;
+  border: 1px dashed #202020;
+  height: 100%;
+  left: 18.2px;
+  top: 8px;
+  z-index: 1;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .stepsborder:last-child {
+  padding-bottom: 0px;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .stepsborder:last-child::after {
+  display: none;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .stepsborder .stepRound1 {
+  width: 16px;
+  height: 14px;
+  background-color: #00d315;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .stepsborder .stepRound2 {
+  width: 16px;
+  height: 14px;
+  background-color: #f53434;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .stepsborder .stepText {
+  font-family: outfit;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 15px;
+  color: #222222;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .shareLink {
+  width: 24px;
+  height: 24px;
+  display: flex;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .shareLink img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 10/10;
+  object-fit: contain;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .tripDetails {
+  font-family: outfit;
+  padding-top: 17px;
+  padding-bottom: 22px;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .tripDetails .tripHeading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+  padding-bottom: 6px;
+}
+[data-page-name=onlineTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .tripDetails .triptext {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=signatureTrip] .contentBody .bookingHeader {
+  background-color: #fbce20;
+  padding: 12px 18px;
+}
+[data-page-name=signatureTrip] .contentBody .bookingHeader .bookingHeaderItem {
+  padding: 3px 15px 3px 15px;
+  border-right: 1px solid #a0a0a0;
+}
+[data-page-name=signatureTrip] .contentBody .bookingHeader .bookingHeaderItem:last-child {
+  border-right: none;
+}
+[data-page-name=signatureTrip] .contentBody .bookingHeader .bookingHeaderItem .bookingHeaderItemImg {
+  margin-right: 10px;
+  width: 26px;
+  height: 26px;
+}
+[data-page-name=signatureTrip] .contentBody .bookingHeader .bookingHeaderItem .bookingHeaderItemImg img {
+  aspect-ratio: 10/10;
+  object-fit: contain;
+}
+[data-page-name=signatureTrip] .contentBody .bookingHeader .bookingHeaderItem .bookingHeaderItemtext {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding {
+  padding: 0px 18px;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .BookingItem {
+  padding-top: 25px;
+  padding-bottom: 38px;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .BookingItem .BookingItemHeading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  padding-bottom: 15px;
+  color: #202020;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .BookingItem .bookingItems {
+  font-family: "Outfit";
+  border: 1px solid #fdeba3;
+  border-radius: 2px;
+  background-color: #fffbee;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  color: #202020;
+  text-transform: capitalize;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .BookingItem .bookingItems.active {
+  background-color: #202020;
+  color: #fff;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsNew {
+  background-color: #e6f7fc;
+  padding: 20px;
+  border-radius: 2px;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsNew .timeSchedule .timeScheduletext {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsNew .timeSchedule .timescheduleType {
+  font-family: "Outfit";
+  padding-left: 24px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  color: #202020;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsNew .steps {
+  padding-top: 25px;
+  padding-bottom: 32px;
+  border-bottom: 2px dashed #202020;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsNew .steps .stepsborder {
+  position: relative;
+  padding-bottom: 25px;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsNew .steps .stepsborder::after {
+  content: "";
+  position: absolute;
+  border: 1px dashed #202020;
+  height: 100%;
+  left: 18.2px;
+  top: 8px;
+  z-index: 1;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsNew .steps .stepsborder:last-child {
+  padding-bottom: 0px;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsNew .steps .stepsborder:last-child::after {
+  display: none;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsNew .steps .stepsborder .stepRound1 {
+  width: 16px;
+  height: 14px;
+  background-color: #00d315;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsNew .steps .stepsborder .stepRound2 {
+  width: 16px;
+  height: 14px;
+  background-color: #f53434;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsNew .steps .stepsborder .stepText {
+  font-family: outfit;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 15px;
+  color: #222222;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsNew .tripDetails {
+  font-family: outfit;
+  padding-top: 17px;
+  padding-bottom: 22px;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsNew .tripDetails .tripHeading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+  padding-bottom: 6px;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsNew .tripDetails .triptext {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing {
+  margin-top: 38px;
+  background-color: snow;
+  padding: 20px 10px 20px 20px;
+  border-radius: 2px;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .timeSchedule .timeScheduletext {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .timeSchedule .timescheduleType {
+  font-family: "Outfit";
+  padding-left: 24px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  color: #202020;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps {
+  padding-top: 25px;
+  padding-bottom: 32px;
+  border-bottom: 2px dashed #202020;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder {
+  position: relative;
+  padding-bottom: 25px;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder::after {
+  content: "";
+  position: absolute;
+  border: 1px dashed #202020;
+  height: 100%;
+  left: 18.2px;
+  top: 8px;
+  z-index: 1;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder:last-child {
+  padding-bottom: 0px;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder:last-child::after {
+  display: none;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder .stepRound1 {
+  width: 16px;
+  height: 14px;
+  background-color: #00d315;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder .stepRound2 {
+  width: 16px;
+  height: 14px;
+  background-color: #f53434;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder .stepText {
+  font-family: outfit;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 15px;
+  color: #222222;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .tripDetails {
+  font-family: outfit;
+  padding-top: 17px;
+  padding-bottom: 22px;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .tripDetails .tripHeading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+  padding-bottom: 6px;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsOngoing .tripDetails .triptext {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming {
+  background-color: #e6f7fc;
+  padding: 20px 10px 20px 20px;
+  margin-bottom: 24px;
+  margin-top: 38px;
+  border-radius: 2px;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .timeSchedule .timeScheduletext {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .timeSchedule .timescheduleType {
+  font-family: "Outfit";
+  padding-left: 24px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  color: #202020;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps {
+  padding-top: 25px;
+  padding-bottom: 32px;
+  border-bottom: 2px dashed #202020;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .stepsborder {
+  position: relative;
+  padding-bottom: 25px;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .stepsborder::after {
+  content: "";
+  position: absolute;
+  border: 1px dashed #202020;
+  height: 100%;
+  left: 18.2px;
+  top: 8px;
+  z-index: 1;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .stepsborder:last-child {
+  padding-bottom: 0px;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .stepsborder:last-child::after {
+  display: none;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .stepsborder .stepRound1 {
+  width: 16px;
+  height: 14px;
+  background-color: #00d315;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .stepsborder .stepRound2 {
+  width: 16px;
+  height: 14px;
+  background-color: #f53434;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .stepsborder .stepText {
+  font-family: outfit;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 15px;
+  color: #222222;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .shareLink {
+  width: 24px;
+  height: 24px;
+  display: flex;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .steps .shareLink img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 10/10;
+  object-fit: contain;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .tripDetails {
+  font-family: outfit;
+  padding-top: 17px;
+  padding-bottom: 22px;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .tripDetails .tripHeading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+  padding-bottom: 6px;
+}
+[data-page-name=signatureTrip] .contentBody .spacePadding .bookingItemsdetailsUpcoming .tripDetails .triptext {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=endTrip] .contentBody .endTrip {
+  padding: 34px 18px 0px 18px;
+}
+[data-page-name=endTrip] .contentBody .endTrip .readingInputText {
+  padding-bottom: 13px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: outfit;
+  color: #323232;
+}
+[data-page-name=endTrip] .contentBody .endTrip .readingInput {
+  padding-bottom: 33px;
+}
+[data-page-name=endTrip] .contentBody .endTrip .tripAccordian {
+  padding: 35px 0px;
+}
+[data-page-name=endTrip] .contentBody .endTrip .tripAccordian .accordion .accordion-item {
+  border: 0px !important;
+}
+[data-page-name=endTrip] .contentBody .endTrip .tripAccordian .accordion .accordion-item .accordion-header {
+  --bs-accordion-border-width: none !important;
+  --bs-accordion-border-color: none !important;
+}
+[data-page-name=endTrip] .contentBody .endTrip .tripAccordian .accordion .accordion-item .accordion-header .accordion-button {
+  background-color: #fdeba3;
+  color: #202020;
+  border: 0px !important;
+  border-radius: 0;
+  height: 46px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: outfit;
+}
+[data-page-name=endTrip] .contentBody .endTrip .tripAccordian .accordion .accordion-item .accordion-header .accordion-button:focus {
+  box-shadow: none;
+}
+[data-page-name=endTrip] .contentBody .endTrip .tripAccordian .accordion .accordion-item .accordion-header .accordion-button::after {
+  background-image: url(../svg/icons/downArrow.svg) !important;
+  width: 10px;
+  height: 10px;
+  background-position: top center;
+  background-size: contain !important;
+  background: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+[data-page-name=endTrip] .contentBody .endTrip .tripAccordian .accordion .accordion-item .accordion-body {
+  background-color: #fffbee;
+}
+[data-page-name=endTrip] .contentBody .endTrip .tripAccordian .accordion .accordion-item .accordion-body .accordianItem .accordianItems {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 24px;
+  padding-bottom: 9px;
+  color: #202020;
+  font-family: outfit;
+}
+[data-page-name=endTrip] .contentBody .endTrip .tripAccordian .accordion .accordion-item .accordion-body .accordianItem .accordianItemsInput {
+  padding-bottom: 9px;
+  display: none;
+}
+[data-page-name=endTrip] .contentBody .endTrip .tripAccordian .accordion .accordion-item .accordion-body .accordianItem .accordianItemsInput.show {
+  display: flex !important;
+}
+[data-page-name=endTrip] .contentBody .endTrip .tripAccordian .accordion .accordion-item .accordion-body .accordianItem:last-child {
+  padding-bottom: 0px;
+}
+
+[data-page-name=myTripsignature] .contentBody .spacePadding {
+  padding: 0px 18px;
+}
+[data-page-name=myTripsignature] .contentBody .spacePadding .BookingItem {
+  padding-top: 39px;
+  padding-bottom: 31px;
+}
+[data-page-name=myTripsignature] .contentBody .spacePadding .BookingItem .bookingItems {
+  font-family: "Outfit";
+  border: 1px solid #fdeba3;
+  border-radius: 2px;
+  background-color: #fffbee;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  color: #202020;
+  text-transform: capitalize;
+}
+[data-page-name=myTripsignature] .contentBody .spacePadding .BookingItem .bookingItems.active {
+  background-color: #202020;
+  color: #fff;
+}
+[data-page-name=myTripsignature] .contentBody .spacePadding .bookingItemsdetailsOngoing {
+  margin-bottom: 33px;
+  background-color: snow;
+  padding: 21px;
+  border-radius: 2px;
+}
+[data-page-name=myTripsignature] .contentBody .spacePadding .bookingItemsdetailsOngoing .timeSchedule .timeScheduletext {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+}
+[data-page-name=myTripsignature] .contentBody .spacePadding .bookingItemsdetailsOngoing .timeSchedule .timescheduleType {
+  font-family: "Outfit";
+  padding-left: 24px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  color: #202020;
+}
+[data-page-name=myTripsignature] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps {
+  padding-top: 25px;
+  padding-bottom: 20px;
+  border-bottom: 2px dashed #202020;
+}
+[data-page-name=myTripsignature] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder {
+  position: relative;
+  padding-bottom: 25px;
+}
+[data-page-name=myTripsignature] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder::after {
+  content: "";
+  position: absolute;
+  border: 1px dashed #202020;
+  height: 100%;
+  left: 18.2px;
+  top: 8px;
+  z-index: 1;
+}
+[data-page-name=myTripsignature] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder:last-child {
+  padding-bottom: 0px;
+}
+[data-page-name=myTripsignature] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder:last-child::after {
+  display: none;
+}
+[data-page-name=myTripsignature] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder .stepRound1 {
+  width: 16px;
+  height: 14px;
+  background-color: #00d315;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=myTripsignature] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder .stepRound2 {
+  width: 16px;
+  height: 14px;
+  background-color: #f53434;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=myTripsignature] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder .stepText {
+  font-family: outfit;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 15px;
+  color: #222222;
+}
+[data-page-name=myTripsignature] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .tripComplete {
+  color: #00D115;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+}
+[data-page-name=myTripsignature] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .tripreject {
+  color: #F53333;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+}
+[data-page-name=myTripsignature] .contentBody .spacePadding .bookingItemsdetailsOngoing .tripDetails {
+  font-family: outfit;
+  padding-top: 17px;
+}
+[data-page-name=myTripsignature] .contentBody .spacePadding .bookingItemsdetailsOngoing .tripDetails .tripHeading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+  padding-bottom: 6px;
+}
+[data-page-name=myTripsignature] .contentBody .spacePadding .bookingItemsdetailsOngoing .tripDetails .triptext {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=myTripcash] .contentBody .spacePadding {
+  padding: 0px 18px;
+}
+[data-page-name=myTripcash] .contentBody .spacePadding .BookingItem {
+  padding-top: 39px;
+  padding-bottom: 31px;
+}
+[data-page-name=myTripcash] .contentBody .spacePadding .BookingItem .bookingItems {
+  font-family: "Outfit";
+  border: 1px solid #fdeba3;
+  border-radius: 2px;
+  background-color: #fffbee;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  color: #202020;
+  text-transform: capitalize;
+}
+[data-page-name=myTripcash] .contentBody .spacePadding .BookingItem .bookingItems.active {
+  background-color: #202020;
+  color: #fff;
+}
+[data-page-name=myTripcash] .contentBody .spacePadding .bookingItemsdetailsOngoing {
+  margin-bottom: 33px;
+  background-color: snow;
+  padding: 21px;
+  border-radius: 2px;
+}
+[data-page-name=myTripcash] .contentBody .spacePadding .bookingItemsdetailsOngoing .timeSchedule .timeScheduletext {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+}
+[data-page-name=myTripcash] .contentBody .spacePadding .bookingItemsdetailsOngoing .timeSchedule .timescheduleType {
+  font-family: "Outfit";
+  padding-left: 24px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  color: #202020;
+}
+[data-page-name=myTripcash] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps {
+  padding-top: 25px;
+  padding-bottom: 20px;
+  border-bottom: 2px dashed #202020;
+}
+[data-page-name=myTripcash] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder {
+  position: relative;
+  padding-bottom: 25px;
+}
+[data-page-name=myTripcash] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder::after {
+  content: "";
+  position: absolute;
+  border: 1px dashed #202020;
+  height: 100%;
+  left: 18.2px;
+  top: 8px;
+  z-index: 1;
+}
+[data-page-name=myTripcash] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder:last-child {
+  padding-bottom: 0px;
+}
+[data-page-name=myTripcash] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder:last-child::after {
+  display: none;
+}
+[data-page-name=myTripcash] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder .stepRound1 {
+  width: 16px;
+  height: 14px;
+  background-color: #00d315;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=myTripcash] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder .stepRound2 {
+  width: 16px;
+  height: 14px;
+  background-color: #f53434;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=myTripcash] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .stepsborder .stepText {
+  font-family: outfit;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 15px;
+  color: #222222;
+}
+[data-page-name=myTripcash] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .tripComplete {
+  color: #00D115;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+}
+[data-page-name=myTripcash] .contentBody .spacePadding .bookingItemsdetailsOngoing .steps .tripreject {
+  color: #F53333;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+}
+[data-page-name=myTripcash] .contentBody .spacePadding .bookingItemsdetailsOngoing .tripDetails {
+  font-family: outfit;
+  padding-top: 17px;
+}
+[data-page-name=myTripcash] .contentBody .spacePadding .bookingItemsdetailsOngoing .tripDetails .tripHeading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+  padding-bottom: 6px;
+}
+[data-page-name=myTripcash] .contentBody .spacePadding .bookingItemsdetailsOngoing .tripDetails .triptext {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=myWallet] .contentBody .spacePadding {
+  padding: 0px 18px;
+}
+[data-page-name=myWallet] .contentBody .spacePadding .wallet {
+  padding-top: 36px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+[data-page-name=myWallet] .contentBody .spacePadding .wallet .walletPrice {
+  font-family: "Abhaya Libre";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 57px;
+  color: #202020;
+  padding-bottom: 5px;
+}
+[data-page-name=myWallet] .contentBody .spacePadding .wallet .walletHeading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: #202020;
+}
+[data-page-name=myWallet] .contentBody .spacePadding .walletDetails {
+  background-color: #fff;
+  padding: 23px 19px 68px 19px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+[data-page-name=myWallet] .contentBody .spacePadding .walletDetails .walletDate {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #323232;
+  padding-bottom: 9px;
+}
+[data-page-name=myWallet] .contentBody .spacePadding .walletDetails .walletDetailsStepps .steps {
+  padding-top: 9px;
+  padding-bottom: 13px;
+  border-bottom: 1px dashed #202020;
+}
+[data-page-name=myWallet] .contentBody .spacePadding .walletDetails .walletDetailsStepps .steps:last-child {
+  border-bottom: none;
+}
+[data-page-name=myWallet] .contentBody .spacePadding .walletDetails .walletDetailsStepps .steps .walletMemberName {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #212121;
+  padding-bottom: 5px;
+}
+[data-page-name=myWallet] .contentBody .spacePadding .walletDetails .walletDetailsStepps .steps .stepsborder {
+  position: relative;
+  padding-bottom: 16px;
+}
+[data-page-name=myWallet] .contentBody .spacePadding .walletDetails .walletDetailsStepps .steps .stepsborder::after {
+  content: "";
+  position: absolute;
+  border: 1px dashed #202020;
+  height: 100%;
+  left: 16.2px;
+  top: 8px;
+  z-index: 1;
+}
+[data-page-name=myWallet] .contentBody .spacePadding .walletDetails .walletDetailsStepps .steps .stepsborder:last-child {
+  padding-bottom: 0px;
+}
+[data-page-name=myWallet] .contentBody .spacePadding .walletDetails .walletDetailsStepps .steps .stepsborder:last-child::after {
+  display: none;
+}
+[data-page-name=myWallet] .contentBody .spacePadding .walletDetails .walletDetailsStepps .steps .stepsborder .stepRound1 {
+  width: 12px;
+  height: 10px;
+  background-color: #00d315;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=myWallet] .contentBody .spacePadding .walletDetails .walletDetailsStepps .steps .stepsborder .stepRound2 {
+  width: 12px;
+  height: 10px;
+  background-color: #f53434;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=myWallet] .contentBody .spacePadding .walletDetails .walletDetailsStepps .steps .stepsborder .stepText {
+  font-family: outfit;
+  width: 100%;
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 15px;
+  color: #222222;
+}
+[data-page-name=myWallet] .contentBody .spacePadding .walletDetails .walletDetailsStepps .steps .walletRupees {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+}
+.commanpadding {
+  padding: 0 18px !important;
+}
+
+[data-page-name=index] .mainInner .bodybg {
+  background-color: #FBCA0C;
+}
+[data-page-name=index] .mainInner .bodybg .imgparent img {
+  width: 104px;
+  height: 104px;
+}
+[data-page-name=index] .mainInner .bodybg .text {
+  font-family: "Bruno Ace";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 60px;
+  text-transform: uppercase;
+  margin-top: 13px;
+  color: #202020;
+}
+[data-page-name=login] .mainInner .paddingclass {
+  padding: 18px;
+}
+[data-page-name=login] .mainInner .paddingclass .mainheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  margin-bottom: 19px;
+  color: #202020;
+}
+[data-page-name=login] .mainInner .paddingclass .subheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  margin-bottom: 55px;
+  color: #202020;
+}
+[data-page-name=login] .mainInner .paddingclass .btnhead {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  margin-bottom: 19px;
+  color: #202020;
+}
+[data-page-name=login] .mainInner .paddingclass .selfanchor {
+  width: 100% !important;
+  height: 46px !important;
+  display: block;
+  border: 1px solid;
+  border-radius: 2px;
+  margin-bottom: 32px !important;
+  pointer-events: auto;
+}
+[data-page-name=login] .mainInner .paddingclass .selfanchor.active {
+  background-color: #FBCA0C;
+}
+[data-page-name=login] .mainInner .paddingclass .selfanchor span {
+  color: #300046;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+}
+[data-page-name=login] .mainInner .paddingclass .bottomtxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  margin-top: 37px;
+  color: #202020;
+}
+[data-page-name=loginself] .mainInner .header {
+  padding: 21px 14px;
+}
+[data-page-name=loginself] .mainInner .header .leftimgcontainer img {
+  width: 24px;
+  height: 24px;
+}
+[data-page-name=loginself] .mainInner .paddingclass {
+  padding: 0 18px;
+}
+[data-page-name=loginself] .mainInner .paddingclass .mainheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 28px;
+  color: #202020;
+  margin-bottom: 8px;
+  margin-top: 97px;
+}
+[data-page-name=loginself] .mainInner .paddingclass .subheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: #202020;
+  margin-bottom: 40px;
+}
+[data-page-name=loginself] .mainInner .paddingclass .require {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+  color: #202020;
+  margin-bottom: 11px;
+}
+[data-page-name=loginself] .mainInner .paddingclass .inpcontainer {
+  margin-bottom: 29px;
+}
+[data-page-name=loginself] .mainInner .paddingclass .selfanchor {
+  width: 100% !important;
+  height: 46px !important;
+  display: block;
+  border: 1px solid;
+  border-radius: 2px;
+  pointer-events: auto;
+}
+[data-page-name=loginself] .mainInner .paddingclass .selfanchor.active {
+  background-color: #FBCA0C;
+}
+[data-page-name=loginself] .mainInner .paddingclass .selfanchor span {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #202020;
+  line-height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 46px !important;
+}
+[data-page-name=otp] .mainInner .header {
+  padding: 21px 14px;
+}
+[data-page-name=otp] .mainInner .header .leftimgcontainer img {
+  width: 24px;
+  height: 24px;
+}
+[data-page-name=otp] .mainInner .paddingclass {
+  padding: 18px;
+}
+[data-page-name=otp] .mainInner .paddingclass .mainheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #202020;
+  padding-left: 46px;
+  padding-right: 55px;
+  padding-bottom: 22px;
+}
+[data-page-name=otp] .mainInner .paddingclass .inpcontainer .boxpadding {
+  padding-left: 42px;
+  padding-right: 45px;
+}
+[data-page-name=otp] .mainInner .paddingclass .inpcontainer .boxpadding .boxinp {
+  width: 10px;
+  height: 23px;
+  border: 1px solid #FBCA0C;
+}
+[data-page-name=otp] .mainInner .paddingclass .selfanchor {
+  width: 100% !important;
+  height: 46px !important;
+  display: block;
+  border: 1px solid;
+  border-radius: 2px;
+}
+[data-page-name=otp] .mainInner .paddingclass .selfanchor.active {
+  background-color: #FBCA0C;
+}
+[data-page-name=otp] .mainInner .paddingclass .selfanchor span {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #202020;
+  line-height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 46px !important;
+}
+[data-page-name=Signup] .mainInner .header {
+  padding: 21px 14px;
+}
+[data-page-name=Signup] .mainInner .header .leftimgcontainer img {
+  width: 24px;
+  height: 24px;
+}
+[data-page-name=Signup] .mainInner .paddingclass {
+  padding: 0 18px;
+}
+[data-page-name=Signup] .mainInner .paddingclass .mainheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  margin-bottom: 19px;
+  color: #300046;
+  margin-top: 37px;
+}
+[data-page-name=Signup] .mainInner .paddingclass .subheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  margin-bottom: 55px;
+  color: #202020;
+}
+[data-page-name=Signup] .mainInner .paddingclass .btnhead {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  margin-bottom: 19px;
+  color: #202020;
+}
+[data-page-name=Signup] .mainInner .paddingclass .selfanchor {
+  width: 100% !important;
+  height: 46px !important;
+  display: block;
+  border: 1px solid;
+  border-radius: 2px;
+  margin-bottom: 32px !important;
+}
+[data-page-name=Signup] .mainInner .paddingclass .selfanchor.active {
+  background-color: #FBCA0C;
+}
+[data-page-name=Signup] .mainInner .paddingclass .selfanchor span {
+  color: #300046;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+}
+[data-page-name=Signup] .mainInner .paddingclass .bottomtxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  margin-top: 37px;
+  color: #202020;
+}
+[data-page-name=Signupwithcompany] .mainInner .headerArrow {
+  width: 24px;
+  height: 24px;
+}
+[data-page-name=Signupwithcompany] .mainInner .headerArrow img {
+  aspect-ratio: 10/10;
+  object-fit: cover;
+}
+[data-page-name=Signupwithcompany] .mainInner .paddingclass {
+  padding: 0px 18px;
+}
+[data-page-name=Signupwithcompany] .mainInner .paddingclass .signupHeading {
+  margin-top: 19px;
+  margin-bottom: 34px;
+}
+[data-page-name=Signupwithcompany] .mainInner .paddingclass .signupHeading .mainheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 28px;
+  padding-bottom: 5px;
+  color: #202020;
+}
+[data-page-name=Signupwithcompany] .mainInner .paddingclass .signupHeading .subheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: #202020;
+}
+[data-page-name=Signupwithcompany] .mainInner .paddingclass .myform .marginn {
+  margin-bottom: 24px;
+}
+[data-page-name=Signupwithcompany] .mainInner .paddingclass .myform .marginn .lbl {
+  margin-bottom: 12px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+  color: #202020;
+}
+[data-page-name=Signupwithcompany] .mainInner .paddingclass .myform .marginn .inp {
+  box-shadow: none !important;
+  border-color: #FBCA0C !important;
+  padding-left: 15px;
+}
+[data-page-name=Signupwithcompany] .mainInner .paddingclass .myform .radios {
+  margin-bottom: 23px;
+}
+[data-page-name=Signupwithcompany] .mainInner .paddingclass .myform .radios .roundlabel {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #300046;
+}
+[data-page-name=Signupwithcompany] .mainInner .paddingclass .myform .radios .roundlabel span {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  display: inline-flex;
+}
+[data-page-name=Signupwithcompany] .mainInner .paddingclass .myform .radios .radioinp {
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50%;
+  accent-color: #FBCA0C;
+}
+[data-page-name=Signupwithcompany] .mainInner .paddingclass .myform .radios .radioinp:checked ~ .roundlabel {
+  border-color: #FBCA0C;
+}
+[data-page-name=Signupwithcompany] .mainInner .paddingclass .myform .radios .radioinp:checked ~ .roundlabel span {
+  background-color: #FBCA0C;
+}
+[data-page-name=Signupwithcompany] .mainInner .paddingclass .myform .radios .radiolbl {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  margin-left: 10px;
+  margin-right: 25px;
+  color: #202020;
+}
+[data-page-name=Signupwithcompany] .mainInner .paddingclass .myform .selfanchor {
+  margin-bottom: 35px;
+}
+[data-page-name=Signupwithselfdriver] .mainInner .headerArrow {
+  width: 24px;
+  height: 24px;
+}
+[data-page-name=Signupwithselfdriver] .mainInner .headerArrow img {
+  aspect-ratio: 10/10;
+  object-fit: cover;
+}
+[data-page-name=Signupwithselfdriver] .mainInner .paddingclass {
+  padding: 0px 18px;
+}
+[data-page-name=Signupwithselfdriver] .mainInner .paddingclass .signupHeading {
+  margin-top: 19px;
+  margin-bottom: 40px;
+}
+[data-page-name=Signupwithselfdriver] .mainInner .paddingclass .signupHeading .mainheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 28px;
+  padding-bottom: 5px;
+}
+[data-page-name=Signupwithselfdriver] .mainInner .paddingclass .signupHeading .subheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+}
+[data-page-name=Signupwithselfdriver] .mainInner .paddingclass .myform .marginn {
+  margin-bottom: 24px;
+}
+[data-page-name=Signupwithselfdriver] .mainInner .paddingclass .myform .marginn .lbl {
+  margin-bottom: 12px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+}
+[data-page-name=Signupwithselfdriver] .mainInner .paddingclass .myform .marginn .inp {
+  box-shadow: none !important;
+  border-color: #FBCA0C !important;
+  padding-left: 15px;
+}
+[data-page-name=Signupwithselfdriver] .mainInner .paddingclass .myform .radios {
+  margin-bottom: 23px;
+}
+[data-page-name=Signupwithselfdriver] .mainInner .paddingclass .myform .radios .roundlabel {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #300046;
+}
+[data-page-name=Signupwithselfdriver] .mainInner .paddingclass .myform .radios .roundlabel span {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  display: inline-flex;
+}
+[data-page-name=Signupwithselfdriver] .mainInner .paddingclass .myform .radios .radioinp {
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50%;
+  accent-color: #FBCA0C;
+}
+[data-page-name=Signupwithselfdriver] .mainInner .paddingclass .myform .radios .radioinp:checked ~ .roundlabel {
+  border-color: #FBCA0C;
+}
+[data-page-name=Signupwithselfdriver] .mainInner .paddingclass .myform .radios .radioinp:checked ~ .roundlabel span {
+  background-color: #FBCA0C;
+}
+[data-page-name=Signupwithselfdriver] .mainInner .paddingclass .myform .radios .radiolbl {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  margin-left: 10px;
+  margin-right: 25px;
+}
+[data-page-name=Signupwithselfdriver] .mainInner .paddingclass .myform .selfanchor {
+  margin-bottom: 35px;
+}
+[data-page-name=Signupwithactingdriver] .mainInner .headerArrow {
+  width: 24px;
+  height: 24px;
+}
+[data-page-name=Signupwithactingdriver] .mainInner .headerArrow img {
+  aspect-ratio: 10/10;
+  object-fit: cover;
+}
+[data-page-name=Signupwithactingdriver] .mainInner .paddingclass {
+  padding: 0px 18px;
+}
+[data-page-name=Signupwithactingdriver] .mainInner .paddingclass .signupHeading {
+  margin-top: 19px;
+  margin-bottom: 40px;
+}
+[data-page-name=Signupwithactingdriver] .mainInner .paddingclass .signupHeading .mainheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 28px;
+  padding-bottom: 5px;
+}
+[data-page-name=Signupwithactingdriver] .mainInner .paddingclass .signupHeading .subheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+}
+[data-page-name=Signupwithactingdriver] .mainInner .paddingclass .myform .marginn {
+  margin-bottom: 24px;
+}
+[data-page-name=Signupwithactingdriver] .mainInner .paddingclass .myform .marginn .lbl {
+  margin-bottom: 12px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+}
+[data-page-name=Signupwithactingdriver] .mainInner .paddingclass .myform .marginn .inp {
+  box-shadow: none !important;
+  border-color: #FBCA0C !important;
+  padding-left: 15px;
+}
+[data-page-name=Signupwithactingdriver] .mainInner .paddingclass .myform .radios {
+  margin-bottom: 23px;
+}
+[data-page-name=Signupwithactingdriver] .mainInner .paddingclass .myform .radios .roundlabel {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #300046;
+}
+[data-page-name=Signupwithactingdriver] .mainInner .paddingclass .myform .radios .roundlabel span {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  display: inline-flex;
+}
+[data-page-name=Signupwithactingdriver] .mainInner .paddingclass .myform .radios .radioinp {
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50%;
+  accent-color: #FBCA0C;
+}
+[data-page-name=Signupwithactingdriver] .mainInner .paddingclass .myform .radios .radioinp:checked ~ .roundlabel {
+  border-color: #FBCA0C;
+}
+[data-page-name=Signupwithactingdriver] .mainInner .paddingclass .myform .radios .radioinp:checked ~ .roundlabel span {
+  background-color: #FBCA0C;
+}
+[data-page-name=Signupwithactingdriver] .mainInner .paddingclass .myform .radios .radiolbl {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  margin-left: 10px;
+  margin-right: 25px;
+}
+[data-page-name=Signupwithactingdriver] .mainInner .paddingclass .myform .selfanchor {
+  margin-bottom: 35px;
+}
+[data-page-name=hompage] .homepagepadding {
+  padding: 0 18px;
+}
+[data-page-name=hompage] .homepagepadding .mainheading {
+  padding-top: 25px;
+  padding-bottom: 17px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  color: #202020;
+}
+[data-page-name=hompage] .homepagepadding .shareanchore {
+  display: block;
+  width: 100%;
+  height: 86px;
+  border: 1px dashed;
+  border-radius: 2px;
+  background-color: #fffbee;
+}
+[data-page-name=hompage] .homepagepadding .shareanchore .sharespan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 86px;
+  color: #202020;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+[data-page-name=hompage] .homepagepadding .shareimgcontainer {
+  width: 24px;
+  height: 24px;
+  padding-bottom: 21px;
+}
+[data-page-name=hompage] .homepagepadding .shareimgcontainer .shareimg {
+  position: absolute;
+  top: 21px;
+  right: 21px;
+}
+[data-page-name=hompage] .homepagepadding .subheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+  margin-bottom: 15px;
+}
+[data-page-name=hompage] .homepagepadding .bookingbottom {
+  margin-bottom: 24px;
+}
+[data-page-name=hompage] .homepagepadding .bookingbottom .box .bookinganchor {
+  width: 100%;
+  height: 60px;
+  border: 1px solid #fdeba3;
+  background-color: #fffbee;
+  display: block;
+  margin-top: 12px;
+}
+[data-page-name=hompage] .homepagepadding .bookingbottom .box .bookinganchor .bookingtxt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 60px;
+  color: #222222;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+}
+[data-page-name=hompage] .homepagepadding .linkmargin {
+  margin-bottom: 52px;
+}
+[data-page-name=hompage] .homepagepadding .linkmargin .linkanchor {
+  width: 100%;
+  height: 93px;
+  border: 1px solid #fdeba3;
+  background-color: #fffbee;
+  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+[data-page-name=hompage] .homepagepadding .linkmargin .linkanchor .linkimgcontainer {
+  padding-bottom: 5px;
+}
+[data-page-name=hompage] .homepagepadding .linkmargin .linkanchor .linkimgcontainer img {
+  width: 54px;
+  height: 54px;
+}
+[data-page-name=hompage] .homepagepadding .linkmargin .linkanchor .linktxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #222222;
+}
+[data-page-name=hompage] .modalone .modaldialog .modalcontent .modalheader {
+  padding: 0 !important;
+}
+[data-page-name=hompage] .modalone .modaldialog .modalcontent .modalbody .txt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+  margin-bottom: 13px;
+}
+[data-page-name=hompage] .modalone .modaldialog .modalcontent .modalbody .inpp {
+  margin-bottom: 24px;
+}
+[data-page-name=addnewtrip] .mainInner .headerr .headerbackground {
+  background-color: #FBCA0C;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 29px;
+}
+[data-page-name=addnewtrip] .mainInner .headerr .headerbackground .leftimgcontainer {
+  padding: 16px 14px;
+}
+[data-page-name=addnewtrip] .mainInner .headerr .headerbackground .leftimgcontainer img {
+  width: 24px;
+  height: 24px;
+}
+[data-page-name=addnewtrip] .mainInner .headerr .headerbackground .headertxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  padding: 16px 14px;
+  text-align: center;
+  padding-left: 91px;
+  color: #202020;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass {
+  padding: 0 18px;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .btnmarginbottom {
+  margin-bottom: 24px;
+  margin-top: 28px;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .btnmarginbottom .bookingclass {
+  background-color: #FBCA0C;
+  width: 100%;
+  height: 45px;
+  border-radius: 2px;
+  border: none;
+  padding-right: 26px;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .btnmarginbottom .bookingclass span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 100%;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .btnmarginbottom .enquiryclass {
+  background-color: #FBCA0C;
+  background-color: #fffbee;
+  width: 100%;
+  height: 45px;
+  border-radius: 2px;
+  border: none;
+  border: 1px solid #fdeba3;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .subheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+  padding-bottom: 14px;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .radios {
+  margin-bottom: 23px;
+  overflow-x: auto;
+  width: 100%;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .radios::-webkit-scrollbar {
+  display: none;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .radios .roundlabel {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #300046;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .radios .roundlabel span {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  display: inline-flex;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .radios .radioinp {
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50%;
+  accent-color: #FBCA0C;
+  margin-bottom: 26px;
+  color: #202020;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .radios .radioinp:checked ~ .roundlabel {
+  border-color: #FBCA0C;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .radios .radioinp:checked ~ .roundlabel span {
+  background-color: #FBCA0C;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .radios .radiolbl {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #202020;
+  margin-left: 5px;
+  margin-right: 25px;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .inpmargin {
+  margin-bottom: 25px;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .inpmargin .inpclasss {
+  box-shadow: none !important;
+  height: 46px !important;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .inpmargin .inpclasss::placeholder {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .selectdate {
+  margin-top: 6px;
+  margin-bottom: 33px;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .selectdate .dateclass {
+  width: 100%;
+  height: 46px;
+  border: 1px solid #FBCA0C;
+  border-color: #FBCA0C;
+  padding: 6px 14px 6px 14px;
+  border-radius: 2px;
+  background-color: #fffbee;
+  display: flex;
+  align-items: center;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .selectdate .dateclass .calendertxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  padding: 6px 0;
+  color: #202020;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .selectdate .dateclass .calenderimg {
+  margin-right: 17px;
+  padding: 6px 0;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .selectdate .dateclass .calenderimg img {
+  width: 22px;
+  height: 22px;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .tiprow {
+  margin-bottom: 28px;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .tiprow .tripnoteanchorcontainer {
+  width: 100%;
+  height: 46px;
+  border-radius: 2px;
+  border: 1px solid;
+  border-color: #FBCA0C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .tiprow .tripnoteanchorcontainer .tripnoteanchor {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #300046;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .selectbox {
+  margin-bottom: 34px;
+}
+[data-page-name=addnewtrip] .mainInner .paddingclass .bottombtn {
+  margin-bottom: 28px;
+}
+[data-page-name=asenquiry] .mainInner .headerr .headerbackground {
+  background-color: #FBCA0C;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 29px;
+}
+[data-page-name=asenquiry] .mainInner .headerr .headerbackground .leftimgcontainer {
+  padding: 16px 14px;
+}
+[data-page-name=asenquiry] .mainInner .headerr .headerbackground .leftimgcontainer img {
+  width: 24px;
+  height: 24px;
+}
+[data-page-name=asenquiry] .mainInner .headerr .headerbackground .headertxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  padding: 16px 14px;
+  text-align: center;
+  padding-left: 91px;
+}
+[data-page-name=asenquiry] .mainInner .paddingclass {
+  padding: 0 18px;
+}
+[data-page-name=asenquiry] .mainInner .paddingclass .btnmarginbottom {
+  margin-bottom: 24px;
+  margin-top: 34px;
+}
+[data-page-name=asenquiry] .mainInner .paddingclass .btnmarginbottom .bookingclass {
+  background-color: #fffbee;
+  width: 100%;
+  height: 45px;
+  border-radius: 2px;
+  border: 1px solid #FBCA0C;
+  padding-right: 26px;
+}
+[data-page-name=asenquiry] .mainInner .paddingclass .btnmarginbottom .bookingclass span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 100%;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+[data-page-name=asenquiry] .mainInner .paddingclass .btnmarginbottom .enquiryclass {
+  background-color: #FBCA0C;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  width: 100%;
+  height: 45px;
+  border-radius: 2px;
+  border: none;
+  border: 1px solid #fdeba3;
+}
+[data-page-name=asenquiry] .mainInner .paddingclass .subheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+  padding-bottom: 14px;
+}
+[data-page-name=asenquiry] .mainInner .paddingclass .radios {
+  overflow-x: auto;
+  width: 100%;
+}
+[data-page-name=asenquiry] .mainInner .paddingclass .radios::-webkit-scrollbar {
+  display: none;
+}
+[data-page-name=asenquiry] .mainInner .paddingclass .radios .roundlabel {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #300046;
+}
+[data-page-name=asenquiry] .mainInner .paddingclass .radios .roundlabel span {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  display: inline-flex;
+}
+[data-page-name=asenquiry] .mainInner .paddingclass .radios .radioinp {
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50%;
+  accent-color: #FBCA0C;
+  margin-bottom: 26px;
+}
+[data-page-name=asenquiry] .mainInner .paddingclass .radios .radioinp:checked ~ .roundlabel {
+  border-color: #FBCA0C;
+}
+[data-page-name=asenquiry] .mainInner .paddingclass .radios .radioinp:checked ~ .roundlabel span {
+  background-color: #FBCA0C;
+}
+[data-page-name=asenquiry] .mainInner .paddingclass .radios .radiolbl {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  margin-left: 5px;
+}
+[data-page-name=asenquiry] .mainInner .paddingclass .inpmargin {
+  margin-bottom: 25px;
+}
+[data-page-name=asenquiry] .mainInner .paddingclass .inpmargin .inpclasss {
+  box-shadow: none !important;
+  height: 46px !important;
+}
+[data-page-name=asenquiry] .mainInner .paddingclass .inpmargin .inpclasss::placeholder {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=asenquiry] .mainInner .paddingclass .selectdate {
+  margin-top: 36px;
+  margin-bottom: 20px;
+}
+[data-page-name=asenquiry] .mainInner .paddingclass .selectdate .dateclass {
+  width: 100%;
+  height: 46px;
+  border: 1px solid #FBCA0C;
+  border-color: #FBCA0C;
+  padding: 6px 14px 6px 14px;
+  border-radius: 2px;
+  background-color: #fffbee;
+  display: flex;
+  align-items: center;
+}
+[data-page-name=asenquiry] .mainInner .paddingclass .selectdate .dateclass .calendertxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  padding: 6px 0;
+}
+[data-page-name=asenquiry] .mainInner .paddingclass .selectdate .dateclass .calenderimg {
+  margin-right: 17px;
+  padding: 6px 0;
+}
+[data-page-name=asenquiry] .mainInner .paddingclass .selectdate .dateclass .calenderimg img {
+  width: 22px;
+  height: 22px;
+}
+[data-page-name=asenquiry] .mainInner .paddingclass .paymentblog {
+  margin-bottom: 49px;
+}
+[data-page-name=tripsummary] .mainInner .paddingclass {
+  padding: 0 18px;
+}
+[data-page-name=tripsummary] .mainInner .paddingclass .mainheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 30px;
+  margin-top: 29px;
+  color: #202020;
+}
+[data-page-name=tripsummary] .mainInner .paddingclass .box {
+  margin-bottom: 5px;
+}
+[data-page-name=tripsummary] .mainInner .paddingclass .box .txt1 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 30px;
+  color: #222222;
+}
+[data-page-name=tripsummary] .mainInner .paddingclass .box .txt2 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 30px;
+  min-width: 74px;
+  color: #222222;
+}
+[data-page-name=tripsummary] .mainInner .paddingclass .box .txt11 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #222222;
+  margin-bottom: 9px;
+}
+[data-page-name=tripsummary] .mainInner .paddingclass .divider {
+  width: 100%;
+  border: 1px solid #FBCA0C;
+  margin-top: 16px;
+  margin-bottom: 13px;
+}
+[data-page-name=tripsummary] .mainInner .paddingclass .boxx {
+  margin-bottom: 9px;
+}
+[data-page-name=tripsummary] .mainInner .paddingclass .boxx .txtt1 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #222222;
+}
+[data-page-name=tripsummary] .mainInner .paddingclass .boxx .txtt2 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  min-width: 74px;
+  color: #222222;
+}
+[data-page-name=tripsummary] .mainInner .paddingclass .para {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #222222;
+  margin-bottom: 34px;
+}
+[data-page-name=tripsummary] .mainInner .paddingclass .btnmargin {
+  margin-bottom: 42px;
+}
+[data-page-name=scanbar] .paddingclass {
+  padding: 0 18px;
+}
+[data-page-name=scanbar] .paddingclass .mainheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #202020;
+  margin-top: 45px;
+  margin-bottom: 40px;
+}
+[data-page-name=scanbar] .paddingclass .qrparent {
+  width: 100%;
+  height: 220px;
+  text-align: center;
+}
+[data-page-name=feedback] .paddingclass {
+  padding: 0 18px;
+}
+[data-page-name=feedback] .paddingclass .mainheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  margin-top: 32px;
+  margin-bottom: 5px;
+  color: #202020;
+}
+[data-page-name=feedback] .paddingclass .subheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #202020;
+  margin-bottom: 52px;
+}
+[data-page-name=feedback] .paddingclass .txt1 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #202020;
+  margin-bottom: 9px;
+}
+[data-page-name=feedback] .paddingclass .txt2 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  color: #202020;
+  margin-bottom: 20px;
+}
+[data-page-name=feedback] .paddingclass .starcontainer {
+  display: flex;
+  padding: 0;
+  justify-content: center;
+}
+[data-page-name=feedback] .paddingclass .starcontainer .starli {
+  list-style: none;
+  padding-right: 21px;
+}
+[data-page-name=feedback] .paddingclass .starcontainer .starli:last-child {
+  padding-right: 0;
+}
+[data-page-name=feedback] .paddingclass .starcontainer .starli img {
+  height: 22px;
+}
+[data-page-name=feedback] .paddingclass .skipclass {
+  margin-top: 26px;
+  text-align: center;
+  display: block;
+  color: #202020;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+[data-page-name=bookingrequest] .paddingclass {
+  padding: 0 18px;
+}
+[data-page-name=bookingrequest] .paddingclass .mainheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  margin-top: 37px;
+  margin-bottom: 5px;
+  color: #202020;
+}
+[data-page-name=bookingrequest] .paddingclass .subheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #202020;
+  margin-bottom: 38px;
+}
+[data-page-name=bookingrequest] .paddingclass .txt1 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  color: #202020;
+  margin-bottom: 21px;
+}
+[data-page-name=bookingrequest] .paddingclass .txt2 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 18px;
+  text-align: center;
+  margin-bottom: 9px;
+  color: #202020;
+}
+[data-page-name=bookingrequest] .paddingclass .txt3 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  margin-bottom: 18px;
+  color: #202020;
+}
+[data-page-name=bookingrequest] .paddingclass .txt4 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #202020;
+  margin-bottom: 33px;
+}
+[data-page-name=bookingrequest] .paddingclass .txtarea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed #FBCA0C !important;
+  width: 100%;
+  height: 147px;
+  background-color: #fffbee;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+  color: #e9ecef;
+  margin-bottom: 34px;
+}
+[data-page-name=paymentmethod] .paddingclass {
+  padding: 0 18px;
+}
+[data-page-name=paymentmethod] .paddingclass .mainheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  margin-top: 23px;
+  margin-bottom: 16px;
+  color: #202020;
+}
+[data-page-name=paymentmethod] .paddingclass .subheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #202020;
+  margin-bottom: 38px;
+}
+[data-page-name=paymentmethod] .paddingclass .radios {
+  margin-bottom: 23px;
+  overflow-x: auto;
+  margin-bottom: 21px;
+  width: 100%;
+}
+[data-page-name=paymentmethod] .paddingclass .radios::-webkit-scrollbar {
+  display: none;
+}
+[data-page-name=paymentmethod] .paddingclass .radios .radio1 {
+  background-color: #fffbee;
+  height: 51px;
+  border: 1px solid #FBCA0C;
+  border-radius: 2px;
+}
+[data-page-name=paymentmethod] .paddingclass .radios .radio1.rodioheight {
+  height: 72px;
+}
+[data-page-name=paymentmethod] .paddingclass .radios .radio1.borderbottom {
+  border-bottom: none;
+}
+[data-page-name=paymentmethod] .paddingclass .radios .radio1 .roundlabel {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #300046;
+  margin-left: 12px;
+  margin-right: 7px;
+}
+[data-page-name=paymentmethod] .paddingclass .radios .radio1 .roundlabel.lbll {
+  margin-top: -20px;
+}
+[data-page-name=paymentmethod] .paddingclass .radios .radio1 .roundlabel span {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  display: inline-flex;
+}
+[data-page-name=paymentmethod] .paddingclass .radios .radio1 .radioinp {
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50%;
+  accent-color: #FBCA0C;
+}
+[data-page-name=paymentmethod] .paddingclass .radios .radio1 .radioinp:checked ~ .roundlabel {
+  border-color: #FBCA0C;
+}
+[data-page-name=paymentmethod] .paddingclass .radios .radio1 .radioinp:checked ~ .roundlabel span {
+  background-color: #FBCA0C;
+}
+[data-page-name=paymentmethod] .paddingclass .radios .radio1 .radiolbl {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+[data-page-name=paymentmethod] .paddingclass .mainheading1 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  margin-bottom: 16px;
+  color: #202020;
+}
+[data-page-name=paymentmethod] .paddingclass .qrbtn {
+  margin-top: 45px;
+  margin-bottom: 42px;
+}
+[data-page-name=myrateforcustomer] .mainheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 20px;
+  margin-bottom: 11px;
+}
+[data-page-name=myrateforcustomer] .marginn {
+  margin-top: 20px;
+}
+[data-page-name=myrateforcustomer] .marginn .lbl {
+  margin-bottom: 12px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+[data-page-name=myrateforcustomer] .marginn .inp {
+  box-shadow: none !important;
+  border-color: #FBCA0C !important;
+  padding-left: 15px;
+}
+[data-page-name=myrateforcustomer] .marginn .selectclass {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+[data-page-name=myrateforcustomer] .theadclass tr.borderclass {
+  border-bottom: 1px solid #e9ecef;
+}
+[data-page-name=myrateforcustomer] .theadclass tr th {
+  padding: 18px 18px 15px 18px !important;
+  width: 33.33%;
+  text-align: center;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 15px;
+}
+[data-page-name=myrateforcustomer] .theadclass tr th:first-child {
+  text-align: start;
+}
+[data-page-name=myrateforcustomer] .theadclass tr th:last-child {
+  text-align: end;
+}
+[data-page-name=myrateforcustomer] .tbodyclass {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+}
+[data-page-name=myrateforcustomer] .tbodyclass tr td {
+  padding: 11px 18px 17px 18px !important;
+  text-align: center;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+}
+[data-page-name=myrateforcustomer] .tbodyclass tr td:first-child {
+  text-align: start;
+}
+[data-page-name=myrateforcustomer] .tbodyclass tr td:last-child {
+  text-align: end;
+}
+[data-page-name=myrateforcustomer] .mainheading1 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: #202020;
+  margin-top: 9px;
+  margin-bottom: 9px;
+}
+[data-page-name=myrateforcustomer] .bgofrow {
+  background-color: #fffbee;
+  height: 46px;
+  margin-bottom: 14px;
+}
+[data-page-name=myrateforcustomer] .bgofrow .aa {
+  padding: 0 18px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 15px;
+}
+[data-page-name=myrateforcustomer] .dataparent {
+  padding: 0 18px;
+  margin-bottom: 19px;
+}
+[data-page-name=myrateforcustomer] .dataparent .datatxt1 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+}
+[data-page-name=myrateforcustomer] .dataparent .datatxt2 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+}
+[data-page-name=myratelocal] .mainheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 20px;
+  margin-bottom: 11px;
+}
+[data-page-name=myratelocal] .marginn {
+  margin-top: 20px;
+}
+[data-page-name=myratelocal] .marginn .lbl {
+  margin-bottom: 12px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+[data-page-name=myratelocal] .marginn .inp {
+  box-shadow: none !important;
+  border-color: #FBCA0C !important;
+  padding-left: 15px;
+}
+[data-page-name=myratelocal] .marginn .selectclass {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+[data-page-name=myratelocal] .theadclass tr.borderclass {
+  border-bottom: 1px solid #e9ecef;
+}
+[data-page-name=myratelocal] .theadclass tr th {
+  padding: 18px 18px 15px 18px !important;
+  width: 33.33%;
+  text-align: center;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 15px;
+}
+[data-page-name=myratelocal] .theadclass tr th:first-child {
+  text-align: start;
+}
+[data-page-name=myratelocal] .theadclass tr th:last-child {
+  text-align: end;
+}
+[data-page-name=myratelocal] .tbodyclass {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+}
+[data-page-name=myratelocal] .tbodyclass tr td {
+  padding: 11px 18px 17px 18px !important;
+  text-align: center;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+}
+[data-page-name=myratelocal] .tbodyclass tr td:first-child {
+  text-align: start;
+}
+[data-page-name=myratelocal] .tbodyclass tr td:last-child {
+  text-align: end;
+}
+[data-page-name=myratelocal] .mainheading1 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: #202020;
+  margin-top: 9px;
+  margin-bottom: 9px;
+}
+[data-page-name=myratelocal] .bgofrow {
+  background-color: #fffbee;
+  height: 46px;
+  margin-bottom: 14px;
+}
+[data-page-name=myratelocal] .bgofrow .aa {
+  padding: 0 18px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 15px;
+}
+[data-page-name=myratelocal] .dataparent {
+  padding: 0 18px;
+  margin-bottom: 19px;
+}
+[data-page-name=myratelocal] .dataparent .datatxt1 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+}
+[data-page-name=myratelocal] .dataparent .datatxt2 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+}
+[data-page-name=myrateoutstation] .mainheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 20px;
+  margin-bottom: 11px;
+}
+[data-page-name=myrateoutstation] .marginn {
+  margin-top: 20px;
+}
+[data-page-name=myrateoutstation] .marginn .lbl {
+  margin-bottom: 12px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+[data-page-name=myrateoutstation] .marginn .inp {
+  box-shadow: none !important;
+  border-color: #FBCA0C !important;
+  padding-left: 15px;
+}
+[data-page-name=myrateoutstation] .marginn .selectclass {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+[data-page-name=myrateoutstation] .theadclass tr.borderclass {
+  border-bottom: 1px solid #e9ecef;
+}
+[data-page-name=myrateoutstation] .theadclass tr th {
+  padding: 18px 18px 15px 18px !important;
+  width: 33.33%;
+  text-align: center;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 15px;
+}
+[data-page-name=myrateoutstation] .theadclass tr th:first-child {
+  text-align: start;
+}
+[data-page-name=myrateoutstation] .theadclass tr th:last-child {
+  text-align: end;
+}
+[data-page-name=myrateoutstation] .tbodyclass {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+}
+[data-page-name=myrateoutstation] .tbodyclass tr td {
+  padding: 11px 18px 17px 18px !important;
+  text-align: center;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+}
+[data-page-name=myrateoutstation] .tbodyclass tr td:first-child {
+  text-align: start;
+}
+[data-page-name=myrateoutstation] .tbodyclass tr td:last-child {
+  text-align: end;
+}
+[data-page-name=myrateoutstation] .mainheading1 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: #202020;
+  margin-top: 9px;
+  margin-bottom: 9px;
+}
+[data-page-name=myrateoutstation] .bgofrow {
+  background-color: #fffbee;
+  height: 46px;
+  margin-bottom: 14px;
+}
+[data-page-name=myrateoutstation] .bgofrow .aa {
+  padding: 0 18px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 15px;
+}
+[data-page-name=myrateoutstation] .dataparent {
+  padding: 0 18px;
+  margin-bottom: 19px;
+}
+[data-page-name=myrateoutstation] .dataparent .datatxt1 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+}
+[data-page-name=myrateoutstation] .dataparent .datatxt2 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+}
+[data-page-name=mynetworkadd] .paddingclass {
+  padding: 0 18px;
+}
+[data-page-name=mynetworkadd] .paddingclass .radios {
+  margin-bottom: 23px;
+  overflow-x: auto;
+  margin-top: 36px;
+  width: 100%;
+}
+[data-page-name=mynetworkadd] .paddingclass .radios::-webkit-scrollbar {
+  display: none;
+}
+[data-page-name=mynetworkadd] .paddingclass .radios .roundlabel {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #300046;
+}
+[data-page-name=mynetworkadd] .paddingclass .radios .roundlabel span {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  display: inline-flex;
+}
+[data-page-name=mynetworkadd] .paddingclass .radios .radioinp {
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50%;
+  accent-color: #FBCA0C;
+  margin-bottom: 26px;
+}
+[data-page-name=mynetworkadd] .paddingclass .radios .radioinp:checked ~ .roundlabel {
+  border-color: #FBCA0C;
+}
+[data-page-name=mynetworkadd] .paddingclass .radios .radioinp:checked ~ .roundlabel span {
+  background-color: #FBCA0C;
+}
+[data-page-name=mynetworkadd] .paddingclass .radios .radiolbl {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  margin-left: 5px;
+  color: #202020;
+}
+[data-page-name=mynetworkadd] .paddingclass .addtxt1 {
+  margin-bottom: 7px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+}
+[data-page-name=mynetworkadd] .paddingclass .add {
+  margin-top: 11px;
+}
+[data-page-name=mynetworkadd] .paddingclass .add .addtxt1 {
+  margin-bottom: 7px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+}
+[data-page-name=mynetworkadd] .paddingclass .formcontrol {
+  box-shadow: none !important;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+[data-page-name=mynetworkadd] .paddingclass .formcontrol::placeholder {
+  color: #202020;
+}
+[data-page-name=mynetworkadd] .paddingclass .top {
+  margin-top: 16px;
+}
+[data-page-name=mynetworkadd] .paddingclass .top .selecttxt {
+  margin-bottom: 14px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+}
+[data-page-name=mynetworkadd] .paddingclass .top .selecttxt .back {
+  background-color: white;
+}
+[data-page-name=mynetworkadd] .paddingclass .top .selecttxt .back .selectclass span {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020 !important;
+}
+[data-page-name=mynetworkadd] .paddingclass .lbl {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 16px;
+  margin-bottom: 10px;
+  color: #202020;
+}
+[data-page-name=mynetworkadd] .paddingclass .a1 {
+  margin-top: 16px;
+}
+[data-page-name=mynetworkadd] .paddingclass .a1 .a2 {
+  margin-bottom: 15px;
+}
+[data-page-name=mynetworkadd] .paddingclass .messageheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 22px;
+  margin-bottom: 25px;
+  color: #202020;
+}
+[data-page-name=mynetworkadd] .paddingclass .clockimage {
+  position: absolute;
+  top: 15px;
+  left: 7px;
+  width: 18px;
+  height: 18px;
+}
+[data-page-name=mynetworkadd] .paddingclass .messagebg {
+  background-color: #fffbee;
+  width: 100%;
+  border-radius: 2px;
+  margin-bottom: 29px;
+}
+[data-page-name=mynetworkadd] .paddingclass .messagebg .message {
+  padding: 20px 18px;
+}
+[data-page-name=mynetworkadd] .paddingclass .messagebg .message .salutation {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 24px;
+  color: #202020;
+}
+[data-page-name=mynetworkadd] .paddingclass .messagebg .message .para {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+  margin-bottom: 22px;
+  color: #202020;
+}
+[data-page-name=mynetworkadd] .paddingclass .messagebg .message .para .line {
+  border-bottom: 1px dashed;
+  width: 70px;
+  background-color: #202020;
+  display: inline-flex;
+  margin: 0 4px;
+}
+[data-page-name=mynetworkadd] .paddingclass .messagebg .message .link {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=mynetworkadd] .paddingclass .messagebg .message .msganchor {
+  color: blue !important;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+[data-page-name=mynetworkadd] .paddingclass .messagebg .message .contact {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 20px;
+  color: #202020;
+}
+[data-page-name=mynetworkadd] .paddingclass .endd {
+  margin-bottom: 49px;
+}
+[data-page-name=mynetworkiam] .paddingclass {
+  padding: 0 18px;
+}
+[data-page-name=mynetworkiam] .paddingclass .radios {
+  margin-bottom: 23px;
+  overflow-x: auto;
+  margin-top: 36px;
+  width: 100%;
+}
+[data-page-name=mynetworkiam] .paddingclass .radios::-webkit-scrollbar {
+  display: none;
+}
+[data-page-name=mynetworkiam] .paddingclass .radios .roundlabel {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #300046;
+}
+[data-page-name=mynetworkiam] .paddingclass .radios .roundlabel span {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  display: inline-flex;
+}
+[data-page-name=mynetworkiam] .paddingclass .radios .radioinp {
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50%;
+  accent-color: #FBCA0C;
+  margin-bottom: 26px;
+}
+[data-page-name=mynetworkiam] .paddingclass .radios .radioinp:checked ~ .roundlabel {
+  border-color: #FBCA0C;
+}
+[data-page-name=mynetworkiam] .paddingclass .radios .radioinp:checked ~ .roundlabel span {
+  background-color: #FBCA0C;
+}
+[data-page-name=mynetworkiam] .paddingclass .radios .radiolbl {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  margin-left: 5px;
+  color: #202020;
+}
+[data-page-name=mynetworkiam] .paddingclass .addtxt1 {
+  margin-bottom: 7px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+}
+[data-page-name=mynetworkiam] .paddingclass .add {
+  margin-top: 11px;
+}
+[data-page-name=mynetworkiam] .paddingclass .add .addtxt1 {
+  margin-bottom: 7px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+}
+[data-page-name=mynetworkiam] .paddingclass .formcontrol {
+  box-shadow: none !important;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+[data-page-name=mynetworkiam] .paddingclass .formcontrol::placeholder {
+  color: #202020;
+}
+[data-page-name=mynetworkiam] .paddingclass .top {
+  margin-top: 16px;
+}
+[data-page-name=mynetworkiam] .paddingclass .top .selecttxt {
+  margin-bottom: 14px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+}
+[data-page-name=mynetworkiam] .paddingclass .top .selecttxt .selectclass span {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020 !important;
+}
+[data-page-name=mynetworkiam] .paddingclass .lbl {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 16px;
+  margin-bottom: 10px;
+  color: #202020;
+}
+[data-page-name=mynetworkiam] .paddingclass .a1 {
+  margin-top: 16px;
+}
+[data-page-name=mynetworkiam] .paddingclass .a1 .a2 {
+  margin-bottom: 15px;
+}
+[data-page-name=mynetworkiam] .paddingclass .messageheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 22px;
+  margin-bottom: 25px;
+  color: #202020;
+}
+[data-page-name=mynetworkiam] .paddingclass .clockimage {
+  position: absolute;
+  top: 15px;
+  left: 7px;
+  width: 18px;
+  height: 18px;
+}
+[data-page-name=mynetworkiam] .paddingclass .messagebg {
+  background-color: #fffbee;
+  width: 100%;
+  border-radius: 2px;
+  margin-bottom: 29px;
+}
+[data-page-name=mynetworkiam] .paddingclass .messagebg .message {
+  padding: 20px 18px;
+}
+[data-page-name=mynetworkiam] .paddingclass .messagebg .message .salutation {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 24px;
+  color: #202020;
+}
+[data-page-name=mynetworkiam] .paddingclass .messagebg .message .para {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+  margin-bottom: 22px;
+}
+[data-page-name=mynetworkiam] .paddingclass .messagebg .message .para .line {
+  border-bottom: 1px dashed;
+  width: 70px;
+  background-color: #202020;
+  display: inline-flex;
+  margin: 0 4px;
+}
+[data-page-name=mynetworkiam] .paddingclass .messagebg .message .link {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+[data-page-name=mynetworkiam] .paddingclass .messagebg .message .msganchor {
+  color: blue !important;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=mynetworkiam] .paddingclass .messagebg .message .contact {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 20px;
+  color: #202020;
+}
+[data-page-name=mynetworkiam] .paddingclass .endd {
+  margin-bottom: 49px;
+}
+[data-page-name=document] .paddingclass {
+  padding: 9px 18px;
+}
+[data-page-name=document] .paddingclass .txt1 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+  margin-bottom: 12px;
+  margin-top: 18px;
+  color: #202020;
+}
+[data-page-name=document] .paddingclass .valueclass {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=document] .paddingclass .box {
+  width: 100%;
+  height: 54px;
+  border: 1px solid #FBCA0C;
+  border-radius: 2px;
+}
+[data-page-name=document] .paddingclass .box img {
+  padding: 11px 15px;
+}
+[data-page-name=document] .paddingclass .last {
+  margin-bottom: 20px;
+}
+[data-page-name=documentedit] .paddingclass {
+  padding: 9px 18px;
+}
+[data-page-name=documentedit] .paddingclass .txt1 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+  margin-top: 18px;
+  margin-bottom: 12px;
+}
+[data-page-name=documentedit] .paddingclass .bottmmm {
+  margin-bottom: 33px;
+}
+[data-page-name=documentedit] .paddingclass .fileclass {
+  margin-bottom: 24px;
+}
+[data-page-name=documentedit] .paddingclass .last {
+  margin-bottom: 40px;
+}
+[data-page-name=maintenance] .paddingclass {
+  padding: 37px 18px;
+}
+[data-page-name=maintenance] .paddingclass .mainheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #202020;
+  margin-bottom: 15px;
+}
+[data-page-name=maintenance] .paddingclass .detailbg {
+  background-color: #fffbee;
+  width: 100%;
+  border-radius: 2px;
+  padding: 11px 8px;
+}
+[data-page-name=maintenance] .paddingclass .detailbg .txt1 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 4px;
+  color: #202020;
+}
+[data-page-name=maintenance] .paddingclass .detailbg .txt2 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 9px;
+  color: #202020;
+}
+[data-page-name=maintenance] .paddingclass .detailbg .txt3 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #202020;
+}
+[data-page-name=maintenance] .modalone .modaldialog .modalheader {
+  padding: 0 !important;
+}
+[data-page-name=maintenance] .modalone .modaldialog .modalbody {
+  padding: 25px 25px;
+  height: 148px;
+}
+[data-page-name=maintenance] .modalone .modaldialog .modalbody .modalanchor {
+  color: #202020 !important;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+[data-page-name=maintenance] .modalone .modaldialog .modalbody .modalanchor.active {
+  color: #377dff !important;
+}
+[data-page-name=addservice] .paddingclass {
+  padding: 22px 18px;
+}
+[data-page-name=addservice] .paddingclass .txt1 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+  margin-bottom: 12px;
+  color: #202020;
+  margin-top: 15px;
+}
+[data-page-name=addservice] .paddingclass .nn {
+  margin-bottom: 27px;
+}
+[data-page-name=addservice] .paddingclass .boxbg {
+  height: 46px;
+  background-color: #fffbee;
+  border-color: 1px solid #FBCA0C;
+  border-radius: 2px;
+}
+[data-page-name=addservice] .paddingclass .boxbg .iconparent img {
+  height: 22px;
+  width: 22px;
+}
+[data-page-name=addservice] .paddingclass .boxbg .datetxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  margin-left: 17px;
+  color: #202020;
+}
+[data-page-name=addservice] .paddingclass .txtclass {
+  height: 144px;
+  border: 1px solid #FBCA0C;
+  border-radius: 2px;
+  padding: 13px 16px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #adb5bd;
+}
+[data-page-name=addservice] .paddingclass .txtclass:focus-visible {
+  outline: none !important;
+}
+[data-page-name=addservice] .paddingclass .lasttxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 11px;
+  margin-top: 11px;
+  margin-bottom: 32px;
+  color: #202020;
+}
+[data-page-name=addservice] .paddingclass .formcheckinp {
+  border-color: #202020 !important;
+}
+[data-page-name=addservice] .paddingclass .formchecklbl {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 14px;
+  color: #202020;
+  margin-left: 16px;
+}
+[data-page-name=addservice] .paddingclass .formchecklbl .bottomtxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  color: #202020;
+  margin-top: 7px;
+}
+[data-page-name=addservice] .paddingclass .last {
+  margin-bottom: 33px;
+}
+[data-page-name=endtrippage] .paddingclass {
+  padding: 27px 18px;
+}
+[data-page-name=endtrippage] .paddingclass .txt1 {
+  margin-bottom: 14px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+[data-page-name=endtrippage] .paddingclass .nn {
+  margin-bottom: 26px;
+}
+[data-page-name=endtrippage] .paddingclass .tripanchor {
+  width: 100%;
+  height: 46px !important;
+  color: #202020;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center !important;
+  border-radius: 2px;
+  margin-top: 27px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  background-color: #fdeba3;
+}
+[data-page-name=endtrippage] .paddingclass .tripanchor1 {
+  width: 100%;
+  height: 46px !important;
+  color: #202020;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center !important;
+  border-radius: 2px;
+  margin-top: 30px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  background-color: #fffbee;
+  margin-bottom: 35px;
+  border: 1px solid #FBCA0C;
+  border-radius: 2px;
+}
+[data-page-name=starttrippage] .paddingclass {
+  padding: 27px 18px;
+}
+[data-page-name=starttrippage] .paddingclass .txt1 {
+  margin-bottom: 14px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+[data-page-name=starttrippage] .paddingclass .nn {
+  margin-bottom: 26px;
+}
+[data-page-name=starttrippage] .paddingclass .CalendarType {
+  margin-bottom: 3px;
+}
+[data-page-name=starttrippage] .paddingclass .tripaccordion {
+  margin-top: 27px;
+}
+[data-page-name=starttrippage] .paddingclass .tripaccordion .tripaccordionitem .tripaccordionheader .tripaccordionbtn {
+  box-shadow: none !important;
+  border-color: none !important;
+  background-color: #fffbee;
+  border-radius: none !important;
+  height: 46px !important;
+  color: #202020;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+[data-page-name=starttrippage] .paddingclass .tripaccordion .tripaccordionitem .tripaccordionheader .tripaccordionbtn.active {
+  background-color: #fdeba3;
+}
+[data-page-name=starttrippage] .paddingclass .tripaccordion .tripaccordionitem .tripaccordionheader .tripaccordionbtn::after {
+  content: "";
+  background-image: url(../svg/icons/addmore.svg);
+}
+[data-page-name=starttrippage] .paddingclass .tripaccordion .tripaccordionitem .tripaccordioncollapse .tripaccordionbody {
+  padding: 19px 9px !important;
+  background-color: #fffbee;
+}
+[data-page-name=starttrippage] .paddingclass .formcheck .formcheckinp {
+  border-color: #202020 !important;
+}
+[data-page-name=starttrippage] .paddingclass .formcheck .formcheckinp:checked {
+  background-color: #202020 !important;
+}
+[data-page-name=starttrippage] .paddingclass .formcheck .lbl {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=starttrippage] .paddingclass .nnn {
+  margin-top: 33px;
+}
+[data-page-name=menu] .paddingclass {
+  padding: 35px 18px 20px 18px;
+}
+[data-page-name=menu] .paddingclass2 {
+  padding: 20px 18px 0 18px;
+}
+[data-page-name=menu] .list .menuul {
+  padding: 0;
+}
+[data-page-name=menu] .list .menuul .menuli {
+  list-style: none;
+  text-decoration: none;
+}
+[data-page-name=menu] .list .menuul .menuli .menuanchor {
+  color: #202020;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  pointer-events: auto;
+}
+[data-page-name=menu] .list .menuul .menuli .menuanchor.active {
+  background-color: #fffbee;
+  width: 100%;
+  height: 44px;
+  display: flex;
+  padding-left: 18px;
+  border-radius: 2px;
+  justify-content: start;
+  align-items: center;
+}
+[data-page-name=menu] .modalone .modaldialog .modalheader {
+  padding: 0 !important;
+}
+[data-page-name=menu] .modalone .modaldialog .modalbody {
+  padding: 25px 25px;
+  height: 128px;
+}
+[data-page-name=menu] .modalone .modaldialog .modalbody .modalanchor {
+  color: #202020 !important;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+[data-page-name=menu] .modalone .modaldialog .modalbody .modalanchor.active {
+  color: #377dff !important;
+}
+[data-page-name=termscondition] .paddingclass {
+  padding: 28px 18px;
+}
+[data-page-name=termscondition] .paddingclass .mainheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #202020;
+  margin-bottom: 9px;
+}
+[data-page-name=termscondition] .paddingclass .para {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #202020;
+  margin-bottom: 31px;
+}
+[data-page-name=privacypolicy] .paddingclass {
+  padding: 28px 18px;
+}
+[data-page-name=privacypolicy] .paddingclass .mainheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #202020;
+  margin-bottom: 9px;
+}
+[data-page-name=privacypolicy] .paddingclass .para {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #202020;
+  margin-bottom: 31px;
+}
+[data-page-name=privacypolicy] .mainInner .bookingheader {
+  width: 100% !important;
+  height: 80px;
+  background-color: #FBCA0C;
+  padding: 25px 18px 21px 18px;
+}
+[data-page-name=privacypolicy] .mainInner .bookingheader .headerlefttxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+}
+[data-page-name=privacypolicy] .mainInner .bookingheader .headerryttxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+  display: flex;
+  justify-content: end;
+}
+[data-page-name=privacypolicy] .mainInner .mapparent {
+  width: 100%;
+  height: 327px;
+}
+[data-page-name=privacypolicy] .mainInner .mapparent img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+[data-page-name=privacypolicy] .mainInner .rowclass {
+  margin-top: 20px;
+  margin-bottom: 9px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+}
+[data-page-name=privacypolicy] .mainInner .rowclass .txt1 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=privacypolicy] .mainInner .rowclass .txt2 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+  display: flex;
+  justify-content: end;
+}
+[data-page-name=privacypolicy] .mainInner .txt3 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  justify-content: end;
+  padding: 0 18px;
+  color: #00D115;
+  margin-bottom: 5px;
+}
+[data-page-name=privacypolicy] .mainInner .steprow {
+  padding: 0 18px;
+}
+[data-page-name=privacypolicy] .mainInner .steprow .steps {
+  padding-top: 25px;
+  padding-bottom: 32px;
+  border-bottom: 2px dashed #202020;
+}
+[data-page-name=privacypolicy] .mainInner .steprow .steps .stepsborder {
+  position: relative;
+  padding-bottom: 25px;
+}
+[data-page-name=privacypolicy] .mainInner .steprow .steps .stepsborder::after {
+  content: "";
+  position: absolute;
+  border: 1px dashed #202020;
+  height: 100%;
+  left: 18px;
+  top: 8px;
+  z-index: 1;
+}
+[data-page-name=privacypolicy] .mainInner .steprow .steps .stepsborder:last-child {
+  padding-bottom: 0px;
+}
+[data-page-name=privacypolicy] .mainInner .steprow .steps .stepsborder:last-child::after {
+  display: none;
+}
+[data-page-name=privacypolicy] .mainInner .steprow .steps .stepsborder .stepRound1 {
+  width: 14px;
+  height: 14px;
+  background-color: #00d315;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=privacypolicy] .mainInner .steprow .steps .stepsborder .stepRound2 {
+  width: 14px;
+  height: 14px;
+  background-color: #f53434;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=privacypolicy] .mainInner .steprow .steps .stepsborder .stepText {
+  width: 198px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 15px;
+  color: #222222;
+}
+[data-page-name=privacypolicy] .mainInner .paddingclass {
+  padding: 0 18px;
+  margin-bottom: 20px;
+}
+[data-page-name=privacypolicy] .mainInner .paddingclass .tripDetails {
+  padding-top: 17px;
+  padding-bottom: 22px;
+}
+[data-page-name=privacypolicy] .mainInner .paddingclass .tripDetails .tripHeading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+  padding-bottom: 6px;
+}
+[data-page-name=privacypolicy] .mainInner .paddingclass .tripDetails .triptext {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=privacypolicy] .mainInner .paddingg {
+  margin: 0 18px;
+  margin-bottom: 40px;
+}
+[data-page-name=privacypolicy] .mainInner .paddingg .btnparent {
+  width: 100%;
+  height: 46px;
+  background-color: #FBCA0C;
+  border: none;
+  border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+[data-page-name=privacypolicy] .mainInner .paddingg .btnparent .txt2 img {
+  width: 12px;
+  height: 12px;
+}
+[data-page-name=bookingontheway] .mainInner .bookingheader {
+  width: 100% !important;
+  height: 80px;
+  background-color: #FBCA0C;
+  padding: 25px 18px 21px 18px;
+}
+[data-page-name=bookingontheway] .mainInner .bookingheader .headerlefttxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+}
+[data-page-name=bookingontheway] .mainInner .bookingheader .headerryttxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+  display: flex;
+  justify-content: end;
+}
+[data-page-name=bookingontheway] .mainInner .mapparent {
+  width: 100%;
+  height: 327px;
+}
+[data-page-name=bookingontheway] .mainInner .mapparent img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+[data-page-name=bookingontheway] .mainInner .rowclass {
+  margin-top: 20px;
+  margin-bottom: 9px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+}
+[data-page-name=bookingontheway] .mainInner .rowclass .txt1 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=bookingontheway] .mainInner .rowclass .txt2 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+  display: flex;
+  justify-content: end;
+}
+[data-page-name=bookingontheway] .mainInner .txt3 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  justify-content: end;
+  padding: 0 18px;
+  color: #00D115;
+  margin-bottom: 5px;
+}
+[data-page-name=bookingontheway] .mainInner .steprow {
+  padding: 0 18px;
+}
+[data-page-name=bookingontheway] .mainInner .steprow .steps {
+  padding-top: 25px;
+  padding-bottom: 32px;
+  border-bottom: 2px dashed #202020;
+}
+[data-page-name=bookingontheway] .mainInner .steprow .steps .stepsborder {
+  position: relative;
+  padding-bottom: 25px;
+}
+[data-page-name=bookingontheway] .mainInner .steprow .steps .stepsborder::after {
+  content: "";
+  position: absolute;
+  border: 1px dashed #202020;
+  height: 100%;
+  left: 18px;
+  top: 8px;
+  z-index: 1;
+}
+[data-page-name=bookingontheway] .mainInner .steprow .steps .stepsborder:last-child {
+  padding-bottom: 0px;
+}
+[data-page-name=bookingontheway] .mainInner .steprow .steps .stepsborder:last-child::after {
+  display: none;
+}
+[data-page-name=bookingontheway] .mainInner .steprow .steps .stepsborder .stepRound1 {
+  width: 14px;
+  height: 14px;
+  background-color: #00d315;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=bookingontheway] .mainInner .steprow .steps .stepsborder .stepRound2 {
+  width: 14px;
+  height: 14px;
+  background-color: #f53434;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=bookingontheway] .mainInner .steprow .steps .stepsborder .stepText {
+  width: 198px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 15px;
+  color: #222222;
+}
+[data-page-name=bookingontheway] .mainInner .callparent {
+  background-color: #FBCA0C;
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 50px #FBCA0C;
+}
+[data-page-name=bookingontheway] .mainInner .callparent img {
+  height: 18px;
+  width: 18px;
+}
+[data-page-name=bookingontheway] .mainInner .paddingclass {
+  padding: 0 18px;
+  margin-bottom: 20px;
+}
+[data-page-name=bookingontheway] .mainInner .paddingclass .tripDetails {
+  padding-top: 17px;
+  padding-bottom: 22px;
+}
+[data-page-name=bookingontheway] .mainInner .paddingclass .tripDetails .tripHeading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+  padding-bottom: 6px;
+}
+[data-page-name=bookingontheway] .mainInner .paddingclass .tripDetails .triptext {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=bookingontheway] .mainInner .paddingg {
+  margin: 0 18px;
+  margin-bottom: 40px;
+}
+[data-page-name=bookingontheway] .mainInner .paddingg .btnparent {
+  width: 100%;
+  height: 46px;
+  background-color: #FBCA0C;
+  border: none;
+  border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+[data-page-name=bookingontheway] .mainInner .paddingg .btnparent .txt2 img {
+  width: 12px;
+  height: 12px;
+}
+[data-page-name=bookingpickup] .mainInner .bookingheader {
+  width: 100% !important;
+  height: 80px;
+  background-color: #FBCA0C;
+  padding: 25px 18px 21px 18px;
+}
+[data-page-name=bookingpickup] .mainInner .bookingheader .headerlefttxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+}
+[data-page-name=bookingpickup] .mainInner .bookingheader .headerryttxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+  display: flex;
+  justify-content: end;
+}
+[data-page-name=bookingpickup] .mainInner .mapparent {
+  width: 100%;
+  height: 350px;
+}
+[data-page-name=bookingpickup] .mainInner .mapparent img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+[data-page-name=bookingpickup] .mainInner .rowclass {
+  margin-top: 20px;
+  margin-bottom: 9px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+}
+[data-page-name=bookingpickup] .mainInner .rowclass .txt1 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=bookingpickup] .mainInner .rowclass .txt2 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+  display: flex;
+  justify-content: end;
+}
+[data-page-name=bookingpickup] .mainInner .txt3 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  justify-content: end;
+  padding: 0 18px;
+  color: #00D115;
+  margin-bottom: 5px;
+}
+[data-page-name=bookingpickup] .mainInner .steprow {
+  padding: 0 18px;
+}
+[data-page-name=bookingpickup] .mainInner .steprow .steps {
+  padding-top: 25px;
+  padding-bottom: 32px;
+  border-bottom: 2px dashed #202020;
+}
+[data-page-name=bookingpickup] .mainInner .steprow .steps .stepsborder {
+  position: relative;
+  padding-bottom: 25px;
+}
+[data-page-name=bookingpickup] .mainInner .steprow .steps .stepsborder::after {
+  content: "";
+  position: absolute;
+  border: 1px dashed #202020;
+  height: 100%;
+  left: 18px;
+  top: 8px;
+  z-index: 1;
+}
+[data-page-name=bookingpickup] .mainInner .steprow .steps .stepsborder:last-child {
+  padding-bottom: 0px;
+}
+[data-page-name=bookingpickup] .mainInner .steprow .steps .stepsborder:last-child::after {
+  display: none;
+}
+[data-page-name=bookingpickup] .mainInner .steprow .steps .stepsborder .stepRound1 {
+  width: 14px;
+  height: 14px;
+  background-color: #00d315;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=bookingpickup] .mainInner .steprow .steps .stepsborder .stepRound2 {
+  width: 14px;
+  height: 14px;
+  background-color: #f53434;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=bookingpickup] .mainInner .steprow .steps .stepsborder .stepText {
+  width: 198px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 15px;
+  color: #222222;
+}
+[data-page-name=bookingpickup] .mainInner .paddingclass {
+  padding: 0 18px;
+  margin-bottom: 20px;
+}
+[data-page-name=bookingpickup] .mainInner .paddingclass .tripDetails {
+  padding-top: 17px;
+  padding-bottom: 22px;
+}
+[data-page-name=bookingpickup] .mainInner .paddingclass .tripDetails .tripHeading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+  padding-bottom: 6px;
+}
+[data-page-name=bookingpickup] .mainInner .paddingclass .tripDetails .triptext {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=bookingpickup] .mainInner .paddingg {
+  margin: 0 18px;
+}
+[data-page-name=bookingpickup] .mainInner .paddingg .btnparent {
+  width: 100%;
+  height: 46px;
+  background-color: #FBCA0C;
+  border: none;
+  border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+[data-page-name=bookingpickup] .mainInner .paddingg .btnparent .txt2 img {
+  width: 12px;
+  height: 12px;
+}
+[data-page-name=bookingpickup] .mainInner .last {
+  margin-bottom: 40px;
+}
+[data-page-name=bookingRequest] .mainInner .bookingheader {
+  width: 100% !important;
+  height: 80px;
+  background-color: #FBCA0C;
+  padding: 25px 18px 21px 18px;
+}
+[data-page-name=bookingRequest] .mainInner .bookingheader .headerlefttxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+}
+[data-page-name=bookingRequest] .mainInner .bookingheader .headerryttxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+  display: flex;
+  justify-content: end;
+}
+[data-page-name=bookingRequest] .mainInner .mapparent {
+  width: 100%;
+  height: 350px;
+}
+[data-page-name=bookingRequest] .mainInner .mapparent img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+[data-page-name=bookingRequest] .mainInner .rowclass {
+  margin-top: 20px;
+  margin-bottom: 9px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+}
+[data-page-name=bookingRequest] .mainInner .rowclass .txt1 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=bookingRequest] .mainInner .rowclass .txt2 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+  display: flex;
+  justify-content: end;
+}
+[data-page-name=bookingRequest] .mainInner .txt3 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  justify-content: end;
+  padding: 0 18px;
+  color: #00D115;
+  margin-bottom: 5px;
+}
+[data-page-name=bookingRequest] .mainInner .steprow {
+  padding: 0 18px;
+}
+[data-page-name=bookingRequest] .mainInner .steprow .steps {
+  padding-top: 25px;
+  padding-bottom: 32px;
+  border-bottom: 2px dashed #202020;
+}
+[data-page-name=bookingRequest] .mainInner .steprow .steps .stepsborder {
+  position: relative;
+  padding-bottom: 25px;
+}
+[data-page-name=bookingRequest] .mainInner .steprow .steps .stepsborder::after {
+  content: "";
+  position: absolute;
+  border: 1px dashed #202020;
+  height: 100%;
+  left: 18px;
+  top: 8px;
+  z-index: 1;
+}
+[data-page-name=bookingRequest] .mainInner .steprow .steps .stepsborder:last-child {
+  padding-bottom: 0px;
+}
+[data-page-name=bookingRequest] .mainInner .steprow .steps .stepsborder:last-child::after {
+  display: none;
+}
+[data-page-name=bookingRequest] .mainInner .steprow .steps .stepsborder .stepRound1 {
+  width: 14px;
+  height: 14px;
+  background-color: #00d315;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=bookingRequest] .mainInner .steprow .steps .stepsborder .stepRound2 {
+  width: 14px;
+  height: 14px;
+  background-color: #f53434;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=bookingRequest] .mainInner .steprow .steps .stepsborder .stepText {
+  width: 198px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 15px;
+  color: #222222;
+}
+[data-page-name=bookingRequest] .mainInner .paddingclass {
+  padding: 0 18px;
+  margin-bottom: 20px;
+}
+[data-page-name=bookingRequest] .mainInner .paddingclass .tripDetails {
+  padding-top: 17px;
+  padding-bottom: 22px;
+}
+[data-page-name=bookingRequest] .mainInner .paddingclass .tripDetails .tripHeading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+  padding-bottom: 6px;
+}
+[data-page-name=bookingRequest] .mainInner .paddingclass .tripDetails .triptext {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=bookingRequest] .mainInner .paddingg {
+  margin: 0 18px;
+  margin-bottom: 40px;
+}
+[data-page-name=bookingRequest] .mainInner .paddingg .btnparent {
+  width: 100%;
+  height: 46px;
+  background-color: #FBCA0C;
+  border: none;
+  border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+[data-page-name=bookingRequest] .mainInner .paddingg .btnparent .txt2 img {
+  width: 12px;
+  height: 12px;
+}
+[data-page-name=bookingRequest] .mainInner .last {
+  margin-bottom: 40px;
+}
+[data-page-name=bookingend] .mainInner .bookingheader {
+  width: 100% !important;
+  height: 80px;
+  background-color: #FBCA0C;
+  padding: 25px 18px 21px 18px;
+}
+[data-page-name=bookingend] .mainInner .bookingheader .headerlefttxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+}
+[data-page-name=bookingend] .mainInner .bookingheader .headerryttxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+  display: flex;
+  justify-content: end;
+}
+[data-page-name=bookingend] .mainInner .mapparent {
+  width: 100%;
+  height: 327px;
+}
+[data-page-name=bookingend] .mainInner .mapparent img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+[data-page-name=bookingend] .mainInner .rowclass {
+  margin-top: 20px;
+  margin-bottom: 9px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+}
+[data-page-name=bookingend] .mainInner .rowclass .txt1 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=bookingend] .mainInner .rowclass .txt2 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+  display: flex;
+  justify-content: end;
+}
+[data-page-name=bookingend] .mainInner .txt3 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  justify-content: end;
+  padding: 0 18px;
+  color: #00D115;
+  margin-bottom: 5px;
+}
+[data-page-name=bookingend] .mainInner .steprow {
+  padding: 0 18px;
+}
+[data-page-name=bookingend] .mainInner .steprow .steps {
+  padding-top: 25px;
+  padding-bottom: 32px;
+  border-bottom: 2px dashed #202020;
+}
+[data-page-name=bookingend] .mainInner .steprow .steps .stepsborder {
+  position: relative;
+  padding-bottom: 25px;
+}
+[data-page-name=bookingend] .mainInner .steprow .steps .stepsborder::after {
+  content: "";
+  position: absolute;
+  border: 1px dashed #202020;
+  height: 100%;
+  left: 18px;
+  top: 8px;
+  z-index: 1;
+}
+[data-page-name=bookingend] .mainInner .steprow .steps .stepsborder:last-child {
+  padding-bottom: 0px;
+}
+[data-page-name=bookingend] .mainInner .steprow .steps .stepsborder:last-child::after {
+  display: none;
+}
+[data-page-name=bookingend] .mainInner .steprow .steps .stepsborder .stepRound1 {
+  width: 14px;
+  height: 14px;
+  background-color: #00d315;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=bookingend] .mainInner .steprow .steps .stepsborder .stepRound2 {
+  width: 14px;
+  height: 14px;
+  background-color: #f53434;
+  border-radius: 50px;
+  z-index: 2;
+}
+[data-page-name=bookingend] .mainInner .steprow .steps .stepsborder .stepText {
+  width: 198px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 15px;
+  color: #222222;
+}
+[data-page-name=bookingend] .mainInner .paddingclass {
+  padding: 0 18px;
+  margin-bottom: 20px;
+}
+[data-page-name=bookingend] .mainInner .paddingclass .tripDetails {
+  padding-top: 17px;
+  padding-bottom: 22px;
+}
+[data-page-name=bookingend] .mainInner .paddingclass .tripDetails .tripHeading {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #222222;
+  padding-bottom: 6px;
+}
+[data-page-name=bookingend] .mainInner .paddingclass .tripDetails .triptext {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=bookingend] .mainInner .paddingg {
+  margin: 0 18px;
+}
+[data-page-name=bookingend] .mainInner .paddingg .btnparent {
+  width: 100%;
+  height: 46px;
+  background-color: #FBCA0C;
+  border: none;
+  border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+[data-page-name=bookingend] .mainInner .paddingg .btnparent .txt2 img {
+  width: 12px;
+  height: 12px;
+}
+[data-page-name=bookingend] .mainInner .last {
+  margin-bottom: 40px;
+}
+[data-page-name=bookingend] .mainInner .last .mm {
+  padding: 0 18px !important;
+}
+[data-page-name=bookingend] .mainInner .last .cancelButton {
+  height: 46px;
+}
+[data-page-name=bookingend] .mainInner .last .startButton {
+  height: 46px;
+  background-color: #FBCA0C;
+  color: #202020;
+}
+[data-page-name=bookingend] .modalone .modaldialog .modalcontent .modalheader {
+  padding: 0 !important;
+}
+[data-page-name=bookingend] .modalone .modaldialog .modalcontent .modalbody .head {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  color: #202020;
+}
+[data-page-name=bookingend] .modalone .modaldialog .modalcontent .modalbody .subhead {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 27px;
+  color: #202020;
+}
+[data-page-name=bookingend] .modalone .modaldialog .modalcontent .modalbody .radios {
+  margin-bottom: 23px;
+  overflow-x: auto;
+  width: 100%;
+}
+[data-page-name=bookingend] .modalone .modaldialog .modalcontent .modalbody .radios::-webkit-scrollbar {
+  display: none;
+}
+[data-page-name=bookingend] .modalone .modaldialog .modalcontent .modalbody .radios .roundlabel {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #300046;
+  color: #202020;
+}
+[data-page-name=bookingend] .modalone .modaldialog .modalcontent .modalbody .radios .roundlabel span {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  display: inline-flex;
+}
+[data-page-name=bookingend] .modalone .modaldialog .modalcontent .modalbody .radios .radioinp {
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50%;
+  accent-color: #FBCA0C;
+  margin-bottom: 26px;
+  color: #202020;
+}
+[data-page-name=bookingend] .modalone .modaldialog .modalcontent .modalbody .radios .radioinp:checked ~ .roundlabel {
+  border-color: #FBCA0C;
+}
+[data-page-name=bookingend] .modalone .modaldialog .modalcontent .modalbody .radios .radioinp:checked ~ .roundlabel span {
+  background-color: #FBCA0C;
+}
+[data-page-name=bookingend] .modalone .modaldialog .modalcontent .modalbody .radios .radiolbl {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  margin-left: 5px;
+  color: #202020;
+}
+[data-page-name=bookingend] .modalone .modaldialog .modalcontent .modalbody .txt {
+  margin-top: 21px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 18px;
+  color: #202020;
+}
+[data-page-name=bookingend] .modalone .modaldialog .modalcontent .modalbody .txtareaclass {
+  width: 100%;
+  height: 106px;
+  border-color: #FBCA0C;
+  border-radius: 2px;
+  padding: 5px 10px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  margin-bottom: 41px;
+  border: 2px solid #FBCA0C;
+  background-color: #fffcf3;
+}
+[data-page-name=bookingend] .modalone .modaldialog .modalcontent .modalbody .txtareaclass:focus-visible {
+  outline: none !important;
+}
+[data-page-name=bookingend] .modalone .modaldialog .modalcontent .modalbody .red {
+  width: 100%;
+  height: 46px;
+  background-color: #F53333;
+  border: none;
+  border-radius: 2px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #fff;
+}
+[data-page-name=menuprofile] .paddingclass {
+  padding: 0 18px;
+}
+[data-page-name=menuprofile] .paddingclass .profilecontainer {
+  width: 81px;
+  height: 81px;
+  background-color: #dee2e6;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 27px;
+  margin-bottom: 8px;
+}
+[data-page-name=menuprofile] .paddingclass .profilecontainer img {
+  width: 44px;
+  height: 44px;
+}
+[data-page-name=menuprofile] .paddingclass .profilecontainer .editimg {
+  position: absolute;
+  top: 50%;
+  right: 36%;
+  width: 15px;
+  height: 15px;
+}
+[data-page-name=menuprofile] .paddingclass .myform .marginn {
+  margin-bottom: 24px;
+}
+[data-page-name=menuprofile] .paddingclass .myform .marginn .lbl {
+  margin-bottom: 12px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+}
+[data-page-name=menuprofile] .paddingclass .myform .marginn .inp {
+  box-shadow: none !important;
+  border-color: #FBCA0C !important;
+  padding-left: 15px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+[data-page-name=menuprofile] .paddingclass .myform .marginn .selectclass {
+  color: #adb5bd !important;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+[data-page-name=editprofile] .paddingclass {
+  padding: 0 18px;
+}
+[data-page-name=editprofile] .paddingclass .profilecontainer {
+  width: 81px;
+  height: 81px;
+  background-color: #dee2e6;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 27px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+[data-page-name=editprofile] .paddingclass .profilecontainer img {
+  width: 44px;
+  height: 44px;
+}
+[data-page-name=editprofile] .paddingclass .profilecontainer .editimg {
+  position: absolute;
+  top: 70px;
+  right: 128px;
+  width: 15px;
+  height: 15px;
+}
+[data-page-name=editprofile] .paddingclass .myform .marginn {
+  margin-bottom: 24px;
+}
+[data-page-name=editprofile] .paddingclass .myform .marginn .lbl {
+  margin-bottom: 12px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+}
+[data-page-name=editprofile] .paddingclass .myform .marginn .inp {
+  box-shadow: none !important;
+  border-color: #FBCA0C !important;
+  padding-left: 15px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+[data-page-name=editprofile] .paddingclass .myform .marginn .selectclass {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+[data-page-name=editprofile] .paddingclass .mm {
+  margin-bottom: 40px;
+}
+[data-page-name=fuel] .fuelmargin {
+  margin-top: 26px;
+  padding: 0 18px;
+}
+[data-page-name=fuel] .fuelmargin .toptxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 15px;
+  color: #202020;
+  margin-bottom: 16px;
+}
+[data-page-name=fuel] .fuelmargin .box {
+  width: 100%;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #FBCA0C;
+  border-radius: 2px;
+  margin-bottom: 37px;
+}
+[data-page-name=fuel] .fuelmargin .box .boxtxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+  color: #202020;
+}
+[data-page-name=fuel] .fuelmargin .capacity {
+  margin-top: 19px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #202020;
+}
+[data-page-name=fuel] .fuelmargin .capacity1 {
+  margin-top: 10px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  color: #202020;
+  line-height: 23px;
+}
+[data-page-name=fueltimeline] .fuelmargin {
+  margin-top: 29px;
+  padding: 0 18px;
+}
+[data-page-name=fueltimeline] .fuelmargin .calendartxt {
+  margin-bottom: 20px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+  margin-left: 30px;
+  position: relative;
+}
+[data-page-name=fueltimeline] .fuelmargin .calendartxt::before {
+  content: "";
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background-color: #FBCA0C;
+  position: absolute;
+  margin-left: -21px;
+  margin-top: 5px;
+}
+[data-page-name=fueltimeline] .fuelmargin .calendartxt::after {
+  content: "";
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  border: 1px dashed #FBCA0C;
+  position: absolute;
+  left: -36px;
+  margin-left: 11px;
+  margin-top: 1px;
+}
+[data-page-name=fueltimeline] .fuelmargin .lastchild .boxbg {
+  background-color: #fffbee;
+  padding: 9px 10px 10px 9px;
+  margin-left: 20px;
+  margin-right: 19px;
+  margin-bottom: 26px;
+}
+[data-page-name=fueltimeline] .fuelmargin .lastchild .boxbg .boxmainhead {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #00D115;
+  margin-bottom: 10px;
+  position: relative;
+}
+[data-page-name=fueltimeline] .fuelmargin .lastchild .boxbg .boxmainhead::before {
+  content: "";
+  content: "";
+  border: 1px dashed #FBCA0C;
+  position: absolute;
+  height: 202px;
+  margin-left: -28px;
+  margin-top: -38px;
+}
+[data-page-name=fueltimeline] .fuelmargin .lastchild .boxbg .locmargin {
+  margin-bottom: 12px;
+}
+[data-page-name=fueltimeline] .fuelmargin .lastchild .boxbg .locmargin .locimg img {
+  width: 15px;
+  height: 21px;
+}
+[data-page-name=fueltimeline] .fuelmargin .lastchild .boxbg .locmargin .loctxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+  margin-left: 9px;
+}
+[data-page-name=fueltimeline] .fuelmargin .lastchild .boxbg .liter {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+  margin-bottom: 20px;
+}
+[data-page-name=fueltimeline] .fuelmargin .lastchild .boxbg .rupee {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+  margin-bottom: 20px;
+}
+[data-page-name=fueltimeline] .fuelmargin .lastchild .boxbg .box {
+  display: inline-flex;
+}
+[data-page-name=fueltimeline] .fuelmargin .lastchild .boxbg .box img {
+  width: 16px;
+  height: 16px;
+}
+[data-page-name=fueltimeline] .fuelmargin .lastchild .boxbg .box .boxtxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  margin-left: 2px;
+}
+[data-page-name=fueltimeline] .fuelmargin .lastchild .boxbg .boxtxt1 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+}
+[data-page-name=nearbypump].paddingclass {
+  padding: 0 18px;
+  background: url(../svg/icons/mapppp.svg);
+}
+[data-page-name=nearbypump].paddingclass .parent {
+  background-image: linear-gradient(to bottom, #FBCA0C 1%, transparent 49%, transparent 50%);
+  height: 100%;
+}
+[data-page-name=nearbypump].paddingclass .parent .map {
+  z-index: 0;
+}
+[data-page-name=nearbypump].paddingclass .parent::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border-color: #202020;
+  border: 2px solid;
+  position: absolute;
+  top: 92px;
+  left: 18px;
+  z-index: 1;
+}
+[data-page-name=nearbypump].paddingclass .parent::after {
+  content: "";
+  height: 48px;
+  border: 1px dashed #fff;
+  position: absolute;
+  top: 108px;
+  left: 25px;
+}
+[data-page-name=nearbypump].paddingclass .parent .locationinp {
+  height: 45px;
+  width: 100%;
+  margin-left: 50px !important;
+  background-color: #fff;
+  border-radius: 2px;
+  border: none !important;
+  margin-top: 20px !important;
+  padding: 0 18px;
+  margin: 0 18px;
+  position: relative;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+[data-page-name=nearbypump].paddingclass .parent .locationinp:focus {
+  border-color: #fff !important;
+}
+[data-page-name=nearbypump].paddingclass .parent .locationinpp1::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border-color: #F53333;
+  background-color: #F53333;
+  position: absolute;
+  top: 34px;
+  left: 30px;
+}
+[data-page-name=nearbypump].paddingclass .parent .locationinpp1 .locationinpp {
+  height: 45px;
+  width: 100%;
+  margin-left: 50px !important;
+  background-color: #fff;
+  border-radius: 2px;
+  border: none !important;
+  margin-top: 20px !important;
+  padding: 0 18px;
+  margin: 0 18px;
+  position: relative;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+[data-page-name=nearbypump].paddingclass .parent .loc {
+  position: absolute;
+  top: -50%;
+  right: 10%;
+  display: flex;
+  flex-direction: column;
+}
+[data-page-name=nearbypump].paddingclass .parent .loc img {
+  width: 21px;
+  height: 29px;
+  margin-left: 70px;
+  margin-bottom: 3px;
+}
+[data-page-name=nearbypump].paddingclass .parent .loc .txt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+}
+[data-page-name=nearbypump].paddingclass .parent .txt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  margin-left: 20px;
+}
+[data-page-name=nearbypump].paddingclass .parent .loc1 {
+  position: absolute;
+  top: 13%;
+  right: 24%;
+  display: flex;
+  flex-direction: column;
+}
+[data-page-name=nearbypump].paddingclass .parent .loc1 img {
+  width: 21px;
+  height: 29px;
+  margin-left: 70px;
+  margin-bottom: 3px;
+}
+[data-page-name=nearbypump].paddingclass .parent .loc1 .txt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+}
+[data-page-name=nearbypump].paddingclass .parent .loc2 {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  display: flex;
+  flex-direction: column;
+}
+[data-page-name=nearbypump].paddingclass .parent .loc2 img {
+  width: 21px;
+  height: 29px;
+  margin-left: 70px;
+  margin-bottom: 3px;
+}
+[data-page-name=nearbypump].paddingclass .parent .loc2 .txt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+}
+[data-page-name=customeraddone] .mainInner .headerr .headerbackground {
+  background-color: #FBCA0C;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 29px;
+}
+[data-page-name=customeraddone] .mainInner .headerr .headerbackground .leftimgcontainer {
+  padding: 16px 14px;
+}
+[data-page-name=customeraddone] .mainInner .headerr .headerbackground .leftimgcontainer img {
+  width: 24px;
+  height: 24px;
+}
+[data-page-name=customeraddone] .mainInner .headerr .headerbackground .headertxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  padding: 16px 14px;
+  text-align: center;
+  padding-left: 91px;
+}
+[data-page-name=customeraddone] .mainInner .paddingclass {
+  padding: 0 18px;
+}
+[data-page-name=customeraddone] .mainInner .paddingclass .subheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+  padding-bottom: 14px;
+  margin-top: 20px;
+}
+[data-page-name=customeraddone] .mainInner .paddingclass .radios {
+  margin-bottom: 30px;
+  overflow-x: auto;
+  width: 100%;
+}
+[data-page-name=customeraddone] .mainInner .paddingclass .radios::-webkit-scrollbar {
+  display: none;
+}
+[data-page-name=customeraddone] .mainInner .paddingclass .radios .roundlabel {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #300046;
+}
+[data-page-name=customeraddone] .mainInner .paddingclass .radios .roundlabel span {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  display: inline-flex;
+}
+[data-page-name=customeraddone] .mainInner .paddingclass .radios .radioinp {
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50%;
+  accent-color: #FBCA0C;
+  margin-bottom: 26px;
+}
+[data-page-name=customeraddone] .mainInner .paddingclass .radios .radioinp:checked ~ .roundlabel {
+  border-color: #FBCA0C;
+}
+[data-page-name=customeraddone] .mainInner .paddingclass .radios .radioinp:checked ~ .roundlabel span {
+  background-color: #FBCA0C;
+}
+[data-page-name=customeraddone] .mainInner .paddingclass .radios .radiolbl {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  margin-left: 5px;
+}
+[data-page-name=customeraddone] .mainInner .paddingclass .inpmargin {
+  margin-bottom: 25px;
+}
+[data-page-name=customeraddone] .mainInner .paddingclass .inpmargin .inpclasss {
+  box-shadow: none !important;
+  height: 46px !important;
+}
+[data-page-name=customeraddone] .mainInner .paddingclass .inpmargin .inpclasss::placeholder {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=customeraddone] .mainInner .paddingclass .selectdate {
+  margin-top: 6px;
+  margin-bottom: 20px;
+}
+[data-page-name=customeraddone] .mainInner .paddingclass .selectdate .dateclass {
+  width: 100%;
+  height: 46px;
+  border: 1px solid #FBCA0C;
+  border-color: #FBCA0C;
+  padding: 6px 14px 6px 14px;
+  border-radius: 2px;
+  background-color: #fffbee;
+  display: flex;
+  align-items: center;
+}
+[data-page-name=customeraddone] .mainInner .paddingclass .selectdate .dateclass .calendertxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  padding: 6px 0;
+}
+[data-page-name=customeraddone] .mainInner .paddingclass .selectdate .dateclass .calenderimg {
+  margin-right: 17px;
+  padding: 6px 0;
+}
+[data-page-name=customeraddone] .mainInner .paddingclass .selectdate .dateclass .calenderimg img {
+  width: 22px;
+  height: 22px;
+}
+[data-page-name=customeraddone] .mainInner .paddingclass .carmarrgin {
+  margin-bottom: 20px;
+}
+[data-page-name=customeraddone] .mainInner .paddingclass .carmarrgin img {
+  width: 64px;
+  height: 64px;
+}
+[data-page-name=customeraddone] .mainInner .paddingclass .carmarrgin .txt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=customeraddone] .mainInner .paddingclass .bottombtn {
+  margin-bottom: 28px;
+}
+[data-page-name=customeradd] .mainInner .headerr .headerbackground {
+  background-color: #FBCA0C;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 29px;
+}
+[data-page-name=customeradd] .mainInner .headerr .headerbackground .leftimgcontainer {
+  padding: 16px 14px;
+}
+[data-page-name=customeradd] .mainInner .headerr .headerbackground .leftimgcontainer img {
+  width: 24px;
+  height: 24px;
+}
+[data-page-name=customeradd] .mainInner .headerr .headerbackground .headertxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  padding: 16px 14px;
+  text-align: center;
+  padding-left: 91px;
+}
+[data-page-name=customeradd] .mainInner .paddingclass {
+  padding: 0 18px;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .subheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+  padding-bottom: 14px;
+  margin-top: 20px;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .radios {
+  margin-bottom: 30px;
+  overflow-x: auto;
+  width: 100%;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .radios::-webkit-scrollbar {
+  display: none;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .radios .roundlabel {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #300046;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .radios .roundlabel span {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  display: inline-flex;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .radios .radioinp {
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50%;
+  accent-color: #FBCA0C;
+  margin-bottom: 26px;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .radios .radioinp:checked ~ .roundlabel {
+  border-color: #FBCA0C;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .radios .radioinp:checked ~ .roundlabel span {
+  background-color: #FBCA0C;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .radios .radiolbl {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  margin-left: 5px;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .inpmargin {
+  margin-bottom: 25px;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .inpmargin .inpclasss {
+  box-shadow: none !important;
+  height: 46px !important;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .inpmargin .inpclasss::placeholder {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .selectdate {
+  margin-top: 6px;
+  margin-bottom: 20px;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .selectdate .dateclass {
+  width: 100%;
+  height: 46px;
+  border: 1px solid #FBCA0C;
+  border-color: #FBCA0C;
+  padding: 6px 14px 6px 14px;
+  border-radius: 2px;
+  background-color: #fffbee;
+  display: flex;
+  align-items: center;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .selectdate .dateclass .calendertxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  padding: 6px 0;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .selectdate .dateclass .calenderimg {
+  margin-right: 17px;
+  padding: 6px 0;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .selectdate .dateclass .calenderimg img {
+  width: 22px;
+  height: 22px;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .carmarrgin {
+  margin-bottom: 8px;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .carmarrgin img {
+  width: 64px;
+  height: 64px;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .carmarrgin .txt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .amounttxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  display: inline-block;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .pricetxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .pricetxt img {
+  width: 15px;
+  height: 15px;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .lastttt {
+  margin-bottom: 32px;
+}
+[data-page-name=customeradd] .mainInner .paddingclass .bottombtn {
+  margin-bottom: 28px;
+}
+[data-page-name=customeradd] .modalone .modaldialog .modalcontent .modalbody {
+  padding-top: 0;
+}
+[data-page-name=customeradd] .modalone .modaldialog .modalcontent .modalbody .head {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #202020;
+  margin-bottom: 1px !important;
+}
+[data-page-name=customeradd] .modalone .modaldialog .modalcontent .modalbody .para {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+  margin-bottom: 34px;
+}
+[data-page-name=addrefuelling] .mainInner .headerr .headerbackground {
+  background-color: #FBCA0C;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 29px;
+}
+[data-page-name=addrefuelling] .mainInner .headerr .headerbackground .leftimgcontainer {
+  padding: 16px 14px;
+}
+[data-page-name=addrefuelling] .mainInner .headerr .headerbackground .leftimgcontainer img {
+  width: 24px;
+  height: 24px;
+}
+[data-page-name=addrefuelling] .mainInner .headerr .headerbackground .headertxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  padding: 16px 14px;
+  text-align: center;
+  padding-left: 91px;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass {
+  padding: 0 18px;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .btnmarginbottom {
+  margin-bottom: 24px;
+  margin-top: 28px;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .btnmarginbottom .bookingclass {
+  background-color: #FBCA0C;
+  width: 100%;
+  height: 45px;
+  border-radius: 2px;
+  border: none;
+  padding-right: 26px;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .btnmarginbottom .bookingclass span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 100%;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .btnmarginbottom .enquiryclass {
+  background-color: #FBCA0C;
+  background-color: #fffbee;
+  width: 100%;
+  height: 45px;
+  border-radius: 2px;
+  border: none;
+  border: 1px solid #fdeba3;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .subheading {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: #202020;
+  padding-bottom: 14px;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .radios {
+  margin-bottom: 23px;
+  overflow-x: auto;
+  width: 100%;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .radios::-webkit-scrollbar {
+  display: none;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .radios .roundlabel {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #300046;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .radios .roundlabel span {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  display: inline-flex;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .radios .radioinp {
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50%;
+  accent-color: #FBCA0C;
+  margin-bottom: 26px;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .radios .radioinp:checked ~ .roundlabel {
+  border-color: #FBCA0C;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .radios .radioinp:checked ~ .roundlabel span {
+  background-color: #FBCA0C;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .radios .radiolbl {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  margin-left: 5px;
+  color: #202020;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .inpmargin {
+  margin-bottom: 25px;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .inpmargin .inpclasss {
+  box-shadow: none !important;
+  height: 46px !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .inpmargin .inpclasss::placeholder {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  line-height: 18px;
+  color: #202020;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .selectdate {
+  margin-top: 6px;
+  margin-bottom: 33px;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .selectdate .dateclass {
+  width: 100%;
+  height: 46px;
+  border: 1px solid #FBCA0C;
+  border-color: #FBCA0C;
+  padding: 6px 14px 6px 14px;
+  border-radius: 2px;
+  background-color: #fffbee;
+  display: flex;
+  align-items: center;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .selectdate .dateclass .calendertxt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #202020;
+  padding: 6px 0;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .selectdate .dateclass .calenderimg {
+  margin-right: 17px;
+  padding: 6px 0;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .selectdate .dateclass .calenderimg img {
+  width: 22px;
+  height: 22px;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .tiprow {
+  margin-bottom: 28px;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .tiprow .tripnoteanchorcontainer {
+  width: 100%;
+  height: 46px;
+  border-radius: 2px;
+  border: 1px solid;
+  border-color: #FBCA0C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .tiprow .tripnoteanchorcontainer .tripnoteanchor {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #300046;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .paymentblog {
+  margin-bottom: 17px;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .selectbox {
+  margin-bottom: 34px;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .bottombtn {
+  margin-bottom: 28px;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .lbll {
+  width: 48px;
+  height: 46px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fffbee;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .txtarea {
+  width: 100%;
+  height: 81px;
+  border: 1px solid #FBCA0C;
+  border-radius: 2px;
+  margin-bottom: 40px;
+  padding: 10px 10px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #dee2e6;
+}
+[data-page-name=addrefuelling] .mainInner .paddingclass .txtarea:focus-visible {
+  outline: none !important;
+}
+[data-page-name=mynetwork] .navtabsul {
+  background-color: #FBCA0C;
+  height: 40px;
+  width: 100%;
+}
+[data-page-name=mynetwork] .navtabsul .navitems {
+  width: 50%;
+}
+[data-page-name=mynetwork] .navtabsul .navitems .navlink {
+  background-color: #FBCA0C;
+  color: #202020;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 21px;
+  border: none !important;
+  width: fit-content;
+  margin: auto;
+  padding: 8px 0 8px 0px;
+}
+[data-page-name=mynetwork] .navtabsul .navitems .navlink.active {
+  background-color: #FBCA0C;
+  color: #202020;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 21px;
+  border: none !important;
+  border-bottom: 3px solid #202020 !important;
+  width: fit-content;
+  margin: auto;
+  padding: 8px 0 8px 0px;
+}
+[data-page-name=mynetwork] .tabcontent .tabdata {
+  padding: 0 18px;
+}
+[data-page-name=mynetwork] .tabcontent .tabdata .tab1 {
+  margin-top: 32px;
+  background-color: #fffbee;
+  width: 100%;
+  border-radius: 2px;
+  padding: 16px 16px;
+}
+[data-page-name=mynetwork] .tabcontent .tabdata .tab1.tab2 {
+  margin-top: 52px !important;
+}
+[data-page-name=mynetwork] .tabcontent .tabdata .tab1 .holder {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 9px;
+}
+[data-page-name=mynetwork] .tabcontent .tabdata .tab1 .holder img {
+  width: 36px;
+  height: 16px;
+}
+[data-page-name=mynetwork] .tabcontent .tabdata .tab1 .txt {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+  padding-bottom: 20px;
+}
+[data-page-name=mynetwork] .tabcontent .tabdata1 .bg {
+  background-color: #fffbee;
+  margin-top: 44px !important;
+  margin: 0 18px;
+}
+[data-page-name=mynetwork] .tabcontent .tabdata1 .bg .paddingclass {
+  padding: 20px 10px;
+}
+[data-page-name=mynetwork] .tabcontent .tabdata1 .bg .paddingclass .status {
+  color: #F53333;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  justify-content: end;
+  margin-bottom: 5px;
+}
+[data-page-name=mynetwork] .tabcontent .tabdata1 .bg .paddingclass .user {
+  width: 49px;
+  height: 49px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #adb5bd;
+}
+[data-page-name=mynetwork] .tabcontent .tabdata1 .bg .paddingclass .user img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+[data-page-name=mynetwork] .tabcontent .tabdata1 .bg .paddingclass .username {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #202020;
+}
+[data-page-name=mynetwork] .tabcontent .tabdata1 .bg .paddingclass .application {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202020;
+}
+[data-page-name=mynetwork] .tabcontent .tabdata1 .bg .paddingclass .application span {
+  height: 1px;
+  width: 50px;
+  background-color: #202020;
+  display: inline-flex;
+  margin: 0px 5px;
+}
+[data-page-name=mynetwork] .tabcontent .tabdata1 .bg .paddingclass .application .link {
+  color: #377dff;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
+}
+[data-page-name=mynetwork] .tabcontent .tabdata1 .bg .paddingclass .application .last {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+[data-page-name=mynetwork] .modalone .modaldialog .modalcontent .modalheader .aa {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+[data-page-name=mynetwork] .modalone .modaldialog .modalcontent .modalbody {
+  display: flex;
+}
+[data-page-name=mynetwork] .modalone .modaldialog .modalcontent .modalbody .whatsapp {
+  width: 36px;
+  height: 36px;
+  border-radius: 2px;
+  background-color: #00D115;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+}
+[data-page-name=mynetwork] .modalone .modaldialog .modalcontent .modalbody .whatsapp img {
+  width: 24px;
+  height: 24px;
+}
+[data-page-name=mynetwork] .modalone .modaldialog .modalcontent .modalbody .msg {
+  width: 36px;
+  height: 36px;
+  border-radius: 2px;
+  background-color: #377dff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+[data-page-name=mynetwork] .modalone .modaldialog .modalcontent .modalbody .msg img {
+  width: 24px;
+  height: 24px;
+}
+[data-page-name=homePage].mainBody .contentBody {
+  padding: 0 18px;
+}
+.form-control {
+  height: 46px;
+  border: 1px solid #fdeba3;
+  border-radius: 2px;
+  color: #333333;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: outfit;
+}
+.form-control::placeholder {
+  color: #adb5bd;
+  font-weight: 400;
+  font-size: 14px;
+}
+.form-control:focus-visible {
+  border-color: #fcd53e;
+}
+.form-control:valid {
+  background-image: none !important;
+}
+.form-control.bginput {
+  background-color: #fffbee;
+}
+.form-control.bginput:focus {
+  background-color: #fffbee;
+}
+
+.form-select {
+  box-shadow: none !important;
+  border-color: #FBCA0C !important;
+  height: 46px !important;
+  border-radius: 2px !important;
+  color: #adb5bd !important;
+}
+.form-select:valid {
+  background-image: none;
+}
+.form-select::after {
+  appearance: none !important;
+  background-image: url(../svg/icons/down.svg);
+  width: 12px;
+  height: 6px;
+}
+.form-select.formSelect2 {
+  color: #202020 !important;
+  padding-left: 30px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: #fffbee;
+}
+
+.form-check .form-check-input:checked {
+  background-color: #FBCA0C !important;
+  border-color: #FBCA0C !important;
+}
+
+.yellowButton {
+  background-color: #FBCA0C;
+  border: 2px solid #FBCA0C;
+  width: 100%;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #222222;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 2px;
+  font-family: outfit;
+}
+.yellowButton:hover {
+  color: #535353;
+  border: 2px solid #FBCA0C;
+  background-color: transparent;
+}
+
+.smallYellowBtn {
+  padding: 4px 11px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FBCA0C;
+  border-radius: 2px;
+  border-radius: 2px;
+  color: #202020;
+  margin-left: 23px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  font-family: outfit;
+}
+
+.cancelButton {
+  background-color: #f53636;
+  border: 2px solid #f53636;
+  border-radius: 2px;
+  width: 100%;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 14px;
+  font-family: outfit;
+}
+.cancelButton:hover {
+  border: 2px solid #f53636;
+  color: #f53636;
+  background-color: transparent;
+}
+
+.startButton {
+  background-color: #00d515;
+  border-radius: 2px;
+  width: 100%;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: outfit;
+  font-size: 14px;
+}
+.startButton:hover {
+  color: #00d515;
+  border: 2px solid #00d515;
+  background-color: transparent;
+}
+
+.modal-backdrop {
+  opacity: 0.9 !important;
+}
+
+.modal.modalone .modaldialog .modalcontent {
+  width: 324px;
+  margin: auto;
+  border-radius: 4px;
+}
+.modal.modalone .modaldialog .modalcontent .modalheader {
+  border-bottom: none !important;
+}
+.modal.modalone .modaldialog .modalcontent .modalheader .btn-close {
+  --bs-btn-close-bg: url(../svg/icons/closebtn.svg) !important;
+  --bs-btn-close-opacity:1;
+}
+.modal.modalone .modaldialog .modalcontent .modalbody .head {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #300046;
+}
+.modal.modalone .modaldialog .modalcontent .modalbody .para {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #300046;
+}
+.modal.modalone .modaldialog .modalcontent .modalbody .whatsapp {
+  width: 36px;
+  height: 36px;
+  border-radius: 2px;
+  background-color: #00D115;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+}
+.modal.modalone .modaldialog .modalcontent .modalbody .msg {
+  width: 36px;
+  height: 36px;
+  border-radius: 2px;
+  background-color: #377dff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=style.min.css.map */

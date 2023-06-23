@@ -1,0 +1,83 @@
+@include media-breakpoint(basic) {
+    .modal-backdrop {
+        opacity: 0.9 !important;
+    }
+    .modal{
+        &.modalone{
+            & .modaldialog{
+                & .modalcontent{
+                    width: 324px;
+                    margin: auto;
+                    border-radius:4px ;
+                    & .modalheader{
+                        border-bottom: none !important;
+                        & .btn-close{
+                            // --bs-btn-close-bg:none;
+                            --bs-btn-close-bg: url(../svg/icons/closebtn.svg) !important;
+                            --bs-btn-close-opacity:1;
+                        }
+                    }
+                    & .modalbody{
+                        // padding-top: 0px !important;
+                        & .head{
+                            font-family: 'Outfit';
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 23px;
+                            margin-bottom: 10px;
+                            text-align: center;
+                            color: $theme3;
+                        }
+                        & .para{
+                            font-family: 'Outfit';
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 16px;
+                            line-height: 20px;
+                            text-align: center;
+                            color: $theme3;
+                        }
+                        & .whatsapp {
+                            width: 36px;
+                            height: 36px;
+                            border-radius: 2px;
+                            background-color: $green;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin-right: 15px;
+                        }
+                        & .msg {
+                            width: 36px;
+                            height: 36px;
+                            border-radius: 2px;
+                            background-color: $blue;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+                }  
+            }
+            }
+    }
+    }
+    
+    
+    // No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
+    @include media-breakpoint-up(sm) {
+        
+    }
+    @include media-breakpoint-up(md) {
+        
+    }
+    @include media-breakpoint-up(lg) {
+        
+    }
+    @include media-breakpoint-up(xl) {
+        
+    }
+    @include media-breakpoint-up(xxl) {
+        
+    }

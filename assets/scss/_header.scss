@@ -1,0 +1,102 @@
+@include media-breakpoint(basic) {
+  .header {
+    padding: 19px 18px;
+    & .profileOuter {
+      width: 60px;
+      height: 60px;
+      & img {
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+    & .userDetail {
+      & .title {
+        font-family: 'Outfit';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+      }
+      & .name {
+        font-family: 'Outfit';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 23px;
+      }
+      & .progress {
+        width: 130px;
+        height: 4px;
+        & .progress-bar{
+        }
+        & .value{
+          font-family: 'Outfit';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 15px;
+          top: -5px;
+          right: -36px;
+        }
+      }
+    }
+    & .otherMenu {
+      & .headerBtn {
+        &.notification{
+          & .totlaNtification{
+            width: 12px;
+            height: 12px;
+            font-family: 'Outfit';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 8px;
+            line-height: 10px;
+            left: -4px;
+          }
+        }
+      }
+    }
+  }
+
+  .headerNew {
+    padding: 16px 18px;
+    & .headerNewImg {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & img {
+        aspect-ratio: 10/10;
+        object-fit: contain;
+      }
+    }
+    & .headerHeading {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 23px;
+      color: $black;
+      text-align: center;
+      font-family: outfit;
+    }
+  }
+}
+
+
+// No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
+@include media-breakpoint-up(sm) {
+  
+}
+@include media-breakpoint-up(md) {
+  
+}
+@include media-breakpoint-up(lg) {
+  
+}
+@include media-breakpoint-up(xl) {
+  
+}
+@include media-breakpoint-up(xxl) {
+  
+}

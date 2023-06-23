@@ -1,0 +1,64 @@
+.form-control {
+    height: 46px;
+    border: 1px solid lighten($theme1, 30);
+    border-radius: 2px;
+    color: lighten($black, 7.5);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: outfit;
+    &::placeholder {
+        color: $gray-500;
+        font-weight: 400;
+        font-size: 14px;
+    }
+    &:focus-visible {
+        border-color: lighten($theme1, 10);
+    }
+    &:valid {
+        background-image: none !important;
+    }
+    &.bginput {
+        background-color: lighten($color: $theme1, $amount: 45);
+    }
+    &.bginput {
+        &:focus {
+            background-color: lighten($color: $theme1, $amount: 45);
+        }
+    }
+}   
+
+.form-select{
+    box-shadow: none !important;
+    border-color: $theme1 !important;
+    height: 46px !important;
+    border-radius: 2px !important;
+    color: $gray-500 !important;
+    &:valid{
+        background-image: none;
+    }
+    &::after{
+        appearance: none !important;
+        background-image: url(../svg/icons/down.svg);
+        width: 12px;
+        height: 6px;
+    }
+    &.formSelect2 {
+        color: $black !important;
+        padding-left: 30px;
+        font-family: 'Outfit';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        background-color: lighten($color: $theme1, $amount: 45);
+    }
+}
+.form-check{
+    & .form-check-input{
+        &:checked{
+            background-color: $theme1 !important;
+            border-color: $theme1 !important;
+        }
+    }
+}

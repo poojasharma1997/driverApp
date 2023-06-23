@@ -1,0 +1,337 @@
+@include media-breakpoint(basic) {
+  @font-face {
+    font-family: 'Outfit';
+    src: url('../fonts/Outfit-Black.woff2') format('woff2'),
+        url('../fonts/Outfit-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('../fonts/Outfit-Bold.woff2') format('woff2'),
+        url('../fonts/Outfit-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('../fonts/Outfit-ExtraBold.woff2') format('woff2'),
+        url('../fonts/Outfit-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('../fonts/Outfit-Regular.woff2') format('woff2'),
+        url('../fonts/Outfit-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('../fonts/Outfit-ExtraLight.woff2') format('woff2'),
+        url('../fonts/Outfit-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('../fonts/Outfit-Medium.woff2') format('woff2'),
+        url('../fonts/Outfit-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('../fonts/') format('woff2'),
+        url('../fonts/Outfit-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('../fonts/Outfit-Thin.woff2') format('woff2'),
+        url('../fonts/Outfit-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('../fonts/Outfit-Light.woff2') format('woff2'),
+        url('../fonts/Outfit-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+  font-family: 'Abhaya Libre';
+  src: url('../fonts/AbhayaLibre-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Abhaya Libre';
+  src: url('../fonts/AbhayaLibre-ExtraBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Abhaya Libre';
+  src: url('../fonts/AbhayaLibre-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Abhaya Libre';
+  src: url('../fonts/AbhayaLibre-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Abhaya Libre';
+  src: url('../fonts/AbhayaLibre-SemiBold.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'bruno ace';
+  src: url('../fonts/BrunoAce-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'bruno ace';
+  src: url('../fonts/BrunoAce-Regular.woff2') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+  * {
+    &>* {
+      &::-webkit-scrollbar {
+        width: 0em;
+        height: .3em;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 50em;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: rgba($theme1, .0);
+        border-radius: 50em;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: rgba($theme1, .6);
+      }
+    }
+
+    &:hover>* {
+      &::-webkit-scrollbar-track {
+        width: .3em;
+        height: .3em;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: rgba($theme1, .1);
+        border-radius: 50em;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: rgba($theme1, .8);
+      }
+    }
+  }
+
+  [href*=javascript][target=_blank] {
+    pointer-events: none;
+  }
+  a.active[href],
+  a.accordion-button:not(.collapsed) {
+    pointer-events: none;
+  }
+  
+  
+
+  body {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    outline: 0 !important;
+    display: block !important;
+    user-select: none !important;
+
+    & input,
+    & textarea,
+    & select {
+      user-select: auto;
+    }
+    
+
+    & main {
+      width: 100vw !important;
+      max-width: none !important;
+      height: 100% !important;
+      margin: 0 !important;
+      position: relative !important;
+      overflow: hidden !important;
+      padding: 0px !important;
+
+      &>.mainInner {
+        height: 100% !important;
+        border: 0 !important;
+        position: relative !important;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        outline: 0 !important;
+        overflow: hidden !important;
+        margin: 0px !important;
+        flex-wrap: nowrap !important;
+
+        & [data-scrollbar] {
+          height: 100%;
+          overflow: hidden auto;
+          
+        }
+
+      }
+    }
+
+    & .overflow-hidden-auto {
+      overflow: hidden auto !important;
+    }
+
+    & .overflow-auto-hidden {
+      overflow: auto hidden !important;
+    }
+  }
+
+}
+
+
+
+
+// No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
+@include media-breakpoint-up(sm) {
+}
+
+@include media-breakpoint-up(md) {
+  * {
+    &>* {
+      scrollbar-width: thin !important;
+      scrollbar-color: lighten($theme2, 2) !important;
+
+      &::-webkit-scrollbar {
+        width: .3em;
+        height: .3em;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 50em;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: rgba($gray-500, .0);
+        border-radius: 50em;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: rgba($gray-400, .6);
+      }
+    }
+
+    &>* {
+      &>*:hover {
+        &::-webkit-scrollbar {
+          width: .3em;
+          height: .3em;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: rgba($gray-500, .1);
+          border-radius: 50em;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+          background: rgba($gray-400, .8);
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {}
+
+@include media-breakpoint-up(xl) {}
+
+@include media-breakpoint-up(xxl) {}
+
+
+@include media-breakpoint-down(xxl) {}
+
+@include media-breakpoint-down(xl) {}
+
+@include media-breakpoint-down(lg) {
+  
+}
+
+@include media-breakpoint-down(md) {}
+
+@include media-breakpoint-down(sm) {}
+
+[data-bs-theme=dark] {
+  @include dark-media-breakpoint(basic) {}
+
+  // No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
+  @include dark-media-breakpoint-up(sm) {}
+
+  @include dark-media-breakpoint-up(md) {}
+
+  @include dark-media-breakpoint-up(lg) {}
+
+  @include dark-media-breakpoint-up(xl) {}
+
+  @include dark-media-breakpoint-up(xxl) {}
+
+
+  @include dark-media-breakpoint-down(xxl) {}
+
+  @include dark-media-breakpoint-down(xl) {}
+
+  @include dark-media-breakpoint-down(lg) {}
+
+  @include dark-media-breakpoint-down(md) {}
+
+  @include dark-media-breakpoint-down(sm) {}
+}
